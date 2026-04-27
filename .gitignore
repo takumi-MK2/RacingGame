@@ -1,0 +1,92 @@
+racinggame/racinggame.slnx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Audio/Car/AccelerationHigh.wav
+racinggame/Assets/Racing Starter Kit/RSK Assets/Audio/Car/AccelerationLow.wav
+racinggame/Assets/Racing Starter Kit/RSK Assets/Audio/Car/DecelerationHigh.wav
+racinggame/Assets/Racing Starter Kit/RSK Assets/Audio/Car/DecelerationLow.wav
+racinggame/Assets/Racing Starter Kit/RSK Assets/Audio/Car/Skid.wav
+racinggame/Assets/Racing Starter Kit/RSK Assets/Audio/FX/PreRaceCountdownGetReadySFX.wav
+racinggame/Assets/Racing Starter Kit/RSK Assets/Audio/FX/PreRaceCountdownGoSFX.wav
+racinggame/Assets/Racing Starter Kit/RSK Assets/Fonts/Autobus-Bold.ttf
+racinggame/Assets/Racing Starter Kit/RSK Assets/Fonts/DefaultFont.ttf
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Cars/car wheels with tire.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Cars/car-parsche-sport-green.obj
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/barrierRed.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/barrierWhite.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/billboard.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/billboardLow.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/billboardLower.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/fenceCurved.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/fenceStraight.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/flagGreen.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/flagRed.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/grandStand.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/grandStandCovered.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/grass.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/overheadLights.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/overheadRound.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/overheadRoundColored.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/pitsGarage.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/pitsGarageCorner.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/pitsOffice.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/pitsOfficeCorner.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/pylon.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/radarEquipment.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/rail.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadBump.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadCorner.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadCorner180.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadCorner270.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadCorner90.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadCornerSmallSquare.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadHalfCircle.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadPitEntry.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadPitGarage.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadPitStraight.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadRampLongCurvedWall.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadStartPositions.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadStraight.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadStraightBridge.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadStraightBridgeMid.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadStraightBridgeStart.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadStraightLong.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/roadStraightSkew.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/tent.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/tentClosed.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/tentClosedLong.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Models/Environment/tentLong.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Scenes/SampleScene/LightingData.asset
+racinggame/Assets/Racing Starter Kit/RSK Assets/Scenes/SampleScene/ReflectionProbe-0.exr
+racinggame/Assets/Racing Starter Kit/RSK Assets/Skybox/vz_clear_ocean_back.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Skybox/vz_clear_ocean_down.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Skybox/vz_clear_ocean_front.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Skybox/vz_clear_ocean_left.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Skybox/vz_clear_ocean_right.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Skybox/vz_clear_ocean_up.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Terrain/Bush 1.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Terrain/Bush 2.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Terrain/Bush 3.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Terrain/Grass Terrain Texture.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Terrain/Tree 1.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Terrain/Tree 2.fbx
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/Net.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/Project Icon.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/Race Finish Checkers.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/Race Finish Visuals.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/SpinMotion Banner Promo.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/UI/ColorPickerBrightnessBar.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/UI/ColorPickerHueBar.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/UI/ColorPickerSaturationBar.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/UI/icon_arrow_up_outline.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/UI/Play Pause Button UI.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/UI/Project Logo UI.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/UI/Race Laps UI.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/UI/Race Position UI.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/UI/SpinMotion Logo UI.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/Textures/UI/Transparent Grey Container UI.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/URP Data/URP Desktop Asset.asset
+racinggame/Assets/Racing Starter Kit/RSK Assets/VFX/ParticleCloudWhite.png
+racinggame/Assets/Racing Starter Kit/RSK Assets/VFX/SkidTrailAlbedo.png
+racinggame/Assets/Racing Starter Kit/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf
+racinggame/Assets/Racing Starter Kit/TextMesh Pro/Fonts/LiberationSans.ttf
+racinggame/Assets/Racing Starter Kit/TextMesh Pro/Sprites/EmojiOne.png
+racinggame/ProjectSettings/ProjectSettings.asset
