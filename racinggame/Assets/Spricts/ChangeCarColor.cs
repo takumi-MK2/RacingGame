@@ -1,10 +1,13 @@
+using SD;
 using UnityEngine;
+//using SD;
 
 public class ChangeCarColor : MonoBehaviour
 {
     public GameObject cube, sphere, quad;
     public Material playerColor;
-    public int choice = 0;
+    //public int choice = 0;
+    SaveData SD;
 
     void Start()
     {
@@ -22,7 +25,7 @@ public class ChangeCarColor : MonoBehaviour
 
     void ChangeObject()
     {
-        switch (choice)
+        switch (SD.CarChoice1P)
         {
             case 0:
                 cube.SetActive(true);
@@ -44,13 +47,13 @@ public class ChangeCarColor : MonoBehaviour
 
     void Erabu()
     {
-        if (choice > 0)
+        if (SD.CarChoice1P > 0)
         {
-            if (Input.GetKeyDown(KeyCode.W)) choice--;
+            if (Input.GetKeyDown(KeyCode.W)) SD.CarChoice1P--;
         }
-        if (choice < 2)
+        if (SD.CarChoice1P < 2)
         {
-            if (Input.GetKeyDown(KeyCode.S)) choice++;
+            if (Input.GetKeyDown(KeyCode.S)) SD.CarChoice1P++;
         }
 
     }
