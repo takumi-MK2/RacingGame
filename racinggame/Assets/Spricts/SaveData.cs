@@ -6,6 +6,7 @@ namespace SD
     {
         public int playNum;
         public int carChoice1P, carChoice2P, carChoice3P, carChoice4P;
+        public double time1P, time2P, time3P, time4P;
 
         void Start()
         {

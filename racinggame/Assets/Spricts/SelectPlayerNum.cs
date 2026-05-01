@@ -9,13 +9,15 @@ public class SelectPlayerNum : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(Time.timeScale);
+
         if (chooseNum > 2 && Input.GetKeyDown(KeyCode.A)) chooseNum--;
 
         if (chooseNum < 4 && Input.GetKeyDown(KeyCode.D)) chooseNum++;
 
-        if (Input.GetKeyDown(KeyCode.Return)) 
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            SD.playNum = chooseNum;
+            //SD.playNum = chooseNum;
             SceneManager.LoadScene("SelectCar");
         }
     }

@@ -3,9 +3,10 @@ using SD;
 
 public class ChangeCarColor : MonoBehaviour
 {
+    public GameObject cursor;
     public GameObject cube, sphere, quad;
     public Material playerColor;
-    //public int choice = 0;
+    public int choice = 0;
     SaveData SD;
 
     void Start()
@@ -24,7 +25,7 @@ public class ChangeCarColor : MonoBehaviour
 
     void ChangeObject()
     {
-        switch (SD.carChoice1P)
+        switch (choice)
         {
             case 0:
                 cube.SetActive(true);
@@ -46,8 +47,16 @@ public class ChangeCarColor : MonoBehaviour
 
     void Erabu()
     {
-        if (SD.carChoice1P > 0 && Input.GetKeyDown(KeyCode.W)) SD.carChoice1P--;
+        if (choice > 0 && Input.GetKeyDown(KeyCode.W))
+        {
+            choice--;
+            cursor.transform.Translate(Vector3.up * 300);
+        }
 
-        if (SD.carChoice1P < 2 && Input.GetKeyDown(KeyCode.S)) SD.carChoice1P++;
+        if (choice < 2 && Input.GetKeyDown(KeyCode.S))
+        {
+            choice++;
+            cursor.transform.Translate(Vector3.down * 300);
+        }
     }
 }
