@@ -1,10 +1,10 @@
 using UnityEngine;
-using SD;
+//using SD;
 using UnityEngine.SceneManagement;
 
 public class SelectPlayerNum : MonoBehaviour
 {
-    SaveData SD;
+    //SaveData SD;
     public int chooseNum = 2;
 
     void Update()
