@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace SD
 {
+
     public class SaveData : MonoBehaviour
     {
         public int playNum;
@@ -16,5 +17,9 @@ namespace SD
             carChoice4P = 0;
         }
 
+        void Update()
+        {
+            Debug.Log(carChoice1P);
+        }
     }
 }

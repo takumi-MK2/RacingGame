@@ -435,7 +435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227058483}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -444,7 +444,7 @@ Transform:
   - {fileID: 2066185795}
   - {fileID: 804957733}
   - {fileID: 1644270303}
-  m_Father: {fileID: 1252884085}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &288619740
 GameObject:
@@ -692,12 +692,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeCarColor
+  playerNum: 1
   cursor: {fileID: 1148869975}
   cube: {fileID: 1034335182574022850}
   sphere: {fileID: 5325688523293022136}
   plain: {fileID: 6416848022221244000}
   playerColor: {fileID: 2100000, guid: 681d2b7da1f4d2347a67f39d32dbfa47, type: 2}
   choice: 1
+  SD: {fileID: 1275752452}
 --- !u!1 &460707808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1611,12 +1613,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeCarColor
+  playerNum: 2
   cursor: {fileID: 2014565410}
   cube: {fileID: 865277187}
   sphere: {fileID: 708379890}
   plain: {fileID: 468393835}
   playerColor: {fileID: 2100000, guid: 907b9453099c296448a958c6e4d40b2c, type: 2}
   choice: 1
+  SD: {fileID: 1275752452}
 --- !u!4 &963648047
 Transform:
   m_ObjectHideFlags: 0
@@ -1928,7 +1932,59 @@ Transform:
   - {fileID: 776715600}
   - {fileID: 824351897}
   - {fileID: 1297187751}
-  - {fileID: 227058484}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1275752451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1275752453}
+  - component: {fileID: 1275752452}
+  m_Layer: 0
+  m_Name: SaveData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1275752452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275752451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12a8ac75c18cae743bd0c5f924d3e7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SD.SaveData
+  playNum: 0
+  carChoice1P: 0
+  carChoice2P: 0
+  carChoice3P: 0
+  carChoice4P: 0
+  time1P: 0
+  time2P: 0
+  time3P: 0
+  time4P: 0
+--- !u!4 &1275752453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275752451}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1297187750
@@ -2107,12 +2163,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeCarColor
+  playerNum: 3
   cursor: {fileID: 1855302722}
   cube: {fileID: 1429225135}
   sphere: {fileID: 1624194945}
   plain: {fileID: 1300202399}
   playerColor: {fileID: 2100000, guid: 87335a24970111e48b0bddb1f85e93f4, type: 2}
   choice: 1
+  SD: {fileID: 1275752452}
 --- !u!4 &1300520759
 Transform:
   m_ObjectHideFlags: 0
@@ -2939,12 +2997,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeCarColor
+  playerNum: 4
   cursor: {fileID: 2074724795}
   cube: {fileID: 1952927308}
   sphere: {fileID: 460707808}
   plain: {fileID: 1176330265}
   playerColor: {fileID: 2100000, guid: c69922b3fc792ed4c8518f0918dcbdba, type: 2}
   choice: 1
+  SD: {fileID: 1275752452}
 --- !u!4 &2045020722
 Transform:
   m_ObjectHideFlags: 0
@@ -3649,3 +3709,5 @@ SceneRoots:
   - {fileID: 963648047}
   - {fileID: 1300520759}
   - {fileID: 2045020722}
+  - {fileID: 1275752453}
+  - {fileID: 227058484}
