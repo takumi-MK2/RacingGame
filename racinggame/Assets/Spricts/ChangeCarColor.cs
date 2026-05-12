@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using SD;
+using UnityEngine.UIElements;
 
 namespace CCC
 {
@@ -12,9 +13,10 @@ namespace CCC
         public Material playerColor; //プレイヤーごとの色マテリアル
         public int choice; //車種番号
         int vector;
-        [SerializeField] SaveData SD;
-        public bool singleShori; //無駄な処理を減らすためのbool
-        public Renderer rnd;
+        public GameObject Popup; //性能表示のパネル
+        [SerializeField] SaveData SD; //他シーンに飛ばせる！保存データ
+        bool singleShori; //無駄な処理を減らすためのbool
+        //public Renderer rnd;
 
         void Start()
         {
@@ -25,8 +27,11 @@ namespace CCC
             sphere.SetActive(false);
             plain.SetActive(false);
 
+            //カーソルの動きを制御するためのやつ
             if (playerNum == 1 || playerNum == 3) vector = 1;
             else if (playerNum == 2 || playerNum == 4) vector = -1;
+
+            Popup.SetActive(false);
         }
 
         void Update()
@@ -64,6 +69,12 @@ namespace CCC
                         cursor.transform.Translate(Vector3.down * 300 * vector);
                         singleShori = true;
                     }
+                    //性能表示キー
+                    if (Input.GetKey(KeyCode.X))
+                    {
+                        Popup.SetActive(true);
+                    }
+                    else Popup.SetActive(false);
                     break;
 
                 case 2:
@@ -81,6 +92,12 @@ namespace CCC
                         cursor.transform.Translate(Vector3.down * 300 * vector);
                         singleShori = true;
                     }
+                    //性能表示キー
+                    if (Input.GetKey(KeyCode.V))
+                    {
+                        Popup.SetActive(true);
+                    }
+                    else Popup.SetActive(false);
                     break;
 
                 case 3:
@@ -98,6 +115,12 @@ namespace CCC
                         cursor.transform.Translate(Vector3.down * 300 * vector);
                         singleShori = true;
                     }
+                    //性能表示キー
+                    if (Input.GetKey(KeyCode.N))
+                    {
+                        Popup.SetActive(true);
+                    }
+                    else Popup.SetActive(false);
                     break;
 
                 case 4:
@@ -115,6 +138,12 @@ namespace CCC
                         cursor.transform.Translate(Vector3.down * 300 * vector);
                         singleShori = true;
                     }
+                    //性能表示キー
+                    if (Input.GetKey(KeyCode.M))
+                    {
+                        Popup.SetActive(true);
+                    }
+                    else Popup.SetActive(false);
                     break;
             }
 
@@ -132,6 +161,11 @@ namespace CCC
             */
         }
 
+        //車の性能を表示するぜ！Foooooooo//
+        void DispPopup()
+        {
+
+        }
 
         ////選択した車種を表示する////
         void ChangeObject()
@@ -176,7 +210,7 @@ namespace CCC
             //Debug.Logで車種変更履歴を表示
             SD.CCLog(playerNum);
             
-            rnd.material = playerColor;
+            //rnd.material = playerColor;
 
             singleShori = false;
         }
