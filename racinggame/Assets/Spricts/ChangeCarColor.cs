@@ -40,6 +40,7 @@ namespace CCC
 
             if (singleShori) ChangeObject();
 
+            //他シーンに保存データ持ってく用のやつ//
             if (Input.GetKeyDown(KeyCode.Z))
             {
                 Debug.Log("とぶで");

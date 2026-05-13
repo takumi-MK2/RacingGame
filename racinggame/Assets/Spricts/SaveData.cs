@@ -25,11 +25,6 @@ namespace SD
             DontDestroyOnLoad(this.gameObject);
         }
 
-        void Update()
-        {
-            
-        }
-
         public void CCLog(int pNum)
         {
             switch (pNum)

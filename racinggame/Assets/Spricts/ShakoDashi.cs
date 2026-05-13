@@ -3,14 +3,15 @@ using SD;
 
 public class ShakoDashi : MonoBehaviour
 {
-    public Transform spawner1P, spawner2P, spawner3P, spawner4P;
+    public Transform spawner1P, spawner2P, spawner3P, spawner4P; //生成位置をGameObjectの位置で設定
     public GameObject car1, car2, car3;
     [SerializeField] SaveData SD;
 
     void Start()
     {
         SD = FindAnyObjectByType<SaveData>();
-
+        
+        //SaveData内の情報をもとに対応したオブジェクトを生成(わりとゴリ押し)
         switch (SD.carChoice1P)
         {
             case 0:
