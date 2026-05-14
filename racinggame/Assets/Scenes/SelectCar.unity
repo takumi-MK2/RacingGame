@@ -889,6 +889,7 @@ MonoBehaviour:
   choice: 1
   Popup: {fileID: 1322331352}
   SD: {fileID: 1275752452}
+  nunumm: 0
 --- !u!1 &460707808
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,6 +2302,7 @@ MonoBehaviour:
   choice: 1
   Popup: {fileID: 1121112305}
   SD: {fileID: 1275752452}
+  nunumm: 0
 --- !u!4 &963648047
 Transform:
   m_ObjectHideFlags: 0
@@ -2968,6 +2970,7 @@ MonoBehaviour:
   choice: 1
   Popup: {fileID: 230453389}
   SD: {fileID: 1275752452}
+  nunumm: 0
 --- !u!4 &1300520759
 Transform:
   m_ObjectHideFlags: 0
@@ -4446,6 +4449,7 @@ MonoBehaviour:
   choice: 1
   Popup: {fileID: 1376141585}
   SD: {fileID: 1275752452}
+  nunumm: 0
 --- !u!4 &2045020722
 Transform:
   m_ObjectHideFlags: 0
