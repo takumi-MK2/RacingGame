@@ -15,8 +15,12 @@ public class RestrictOperationFromNums : MonoBehaviour
 
     void Start()
     {
+        SD = FindAnyObjectByType<SaveData>();
+        PDM = FindAnyObjectByType<PlayerDataManager>();
+
         pNum = PDM.playerCount;
         doit = false;
+        Debug.Log("うごいてるわよ");
     }
 
     void Update()

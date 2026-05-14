@@ -851,7 +851,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &460657420
 Transform:
@@ -877,9 +877,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 460657418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
+  m_Script: {fileID: 11500000, guid: 96a5c205507bd0f468940f40b0620f73, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChangeCarColor
+  m_EditorClassIdentifier: Assembly-CSharp::CCC.ChangeCarColor
   playerNum: 1
   cursor: {fileID: 1148869975}
   cube: {fileID: 1034335182574022850}
@@ -888,7 +888,7 @@ MonoBehaviour:
   playerColor: {fileID: 2100000, guid: 681d2b7da1f4d2347a67f39d32dbfa47, type: 2}
   choice: 1
   Popup: {fileID: 1322331352}
-  SD: {fileID: 1275752452}
+  SD: {fileID: 0}
   nunumm: 0
 --- !u!1 &460707808
 GameObject:
@@ -2273,7 +2273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 963648047}
-  - component: {fileID: 963648046}
+  - component: {fileID: 963648048}
   m_Layer: 0
   m_Name: Controller2P
   m_TagString: Untagged
@@ -2281,28 +2281,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &963648046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963648045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChangeCarColor
-  playerNum: 2
-  cursor: {fileID: 2014565410}
-  cube: {fileID: 865277187}
-  sphere: {fileID: 708379890}
-  plain: {fileID: 468393835}
-  playerColor: {fileID: 2100000, guid: 907b9453099c296448a958c6e4d40b2c, type: 2}
-  choice: 1
-  Popup: {fileID: 1121112305}
-  SD: {fileID: 1275752452}
-  nunumm: 0
 --- !u!4 &963648047
 Transform:
   m_ObjectHideFlags: 0
@@ -2318,6 +2296,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963648048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963648045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a5c205507bd0f468940f40b0620f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CCC.ChangeCarColor
+  playerNum: 2
+  cursor: {fileID: 2014565410}
+  cube: {fileID: 865277187}
+  sphere: {fileID: 708379890}
+  plain: {fileID: 468393835}
+  playerColor: {fileID: 2100000, guid: 907b9453099c296448a958c6e4d40b2c, type: 2}
+  choice: 1
+  Popup: {fileID: 1121112305}
+  SD: {fileID: 0}
+  nunumm: 0
 --- !u!1 &1080674200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2766,10 +2766,6 @@ MonoBehaviour:
   carChoice2P: 0
   carChoice3P: 0
   carChoice4P: 0
-  time1P: 0
-  time2P: 0
-  time3P: 0
-  time4P: 0
 --- !u!4 &1275752453
 Transform:
   m_ObjectHideFlags: 0
@@ -2941,7 +2937,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1300520759}
-  - component: {fileID: 1300520758}
+  - component: {fileID: 1300520760}
   m_Layer: 0
   m_Name: Controller3P
   m_TagString: Untagged
@@ -2949,28 +2945,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1300520758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300520757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChangeCarColor
-  playerNum: 3
-  cursor: {fileID: 1855302722}
-  cube: {fileID: 1429225135}
-  sphere: {fileID: 1624194945}
-  plain: {fileID: 1300202399}
-  playerColor: {fileID: 2100000, guid: 87335a24970111e48b0bddb1f85e93f4, type: 2}
-  choice: 1
-  Popup: {fileID: 230453389}
-  SD: {fileID: 1275752452}
-  nunumm: 0
 --- !u!4 &1300520759
 Transform:
   m_ObjectHideFlags: 0
@@ -2986,6 +2960,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1300520760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300520757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a5c205507bd0f468940f40b0620f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CCC.ChangeCarColor
+  playerNum: 3
+  cursor: {fileID: 1855302722}
+  cube: {fileID: 1429225135}
+  sphere: {fileID: 1624194945}
+  plain: {fileID: 1300202399}
+  playerColor: {fileID: 2100000, guid: 87335a24970111e48b0bddb1f85e93f4, type: 2}
+  choice: 1
+  Popup: {fileID: 230453389}
+  SD: {fileID: 0}
+  nunumm: 0
 --- !u!1 &1322331352
 GameObject:
   m_ObjectHideFlags: 0
@@ -3922,6 +3918,56 @@ Transform:
   - {fileID: 7341545422334737162}
   m_Father: {fileID: 1252884085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1797060350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797060352}
+  - component: {fileID: 1797060351}
+  m_Layer: 0
+  m_Name: pu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1797060351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797060350}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc4ff4e6ec4448458fbfe3a12bd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RestrictOperationFromNums
+  SD: {fileID: 0}
+  PDM: {fileID: 0}
+  cursor3P: {fileID: 1855302722}
+  cursor4P: {fileID: 2074724795}
+  car3P: {fileID: 824351896}
+  car4P: {fileID: 1297187750}
+--- !u!4 &1797060352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797060350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1403.6943, y: -0, z: -1337.5818}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1844262584
 GameObject:
   m_ObjectHideFlags: 0
@@ -4420,7 +4466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2045020722}
-  - component: {fileID: 2045020721}
+  - component: {fileID: 2045020723}
   m_Layer: 0
   m_Name: Controller4P
   m_TagString: Untagged
@@ -4428,28 +4474,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2045020721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2045020720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChangeCarColor
-  playerNum: 4
-  cursor: {fileID: 2074724795}
-  cube: {fileID: 1952927308}
-  sphere: {fileID: 460707808}
-  plain: {fileID: 1176330265}
-  playerColor: {fileID: 2100000, guid: c69922b3fc792ed4c8518f0918dcbdba, type: 2}
-  choice: 1
-  Popup: {fileID: 1376141585}
-  SD: {fileID: 1275752452}
-  nunumm: 0
 --- !u!4 &2045020722
 Transform:
   m_ObjectHideFlags: 0
@@ -4465,6 +4489,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2045020723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045020720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a5c205507bd0f468940f40b0620f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CCC.ChangeCarColor
+  playerNum: 4
+  cursor: {fileID: 2074724795}
+  cube: {fileID: 1952927308}
+  sphere: {fileID: 460707808}
+  plain: {fileID: 1176330265}
+  playerColor: {fileID: 2100000, guid: c69922b3fc792ed4c8518f0918dcbdba, type: 2}
+  choice: 1
+  Popup: {fileID: 1376141585}
+  SD: {fileID: 0}
+  nunumm: 0
 --- !u!1 &2066185791
 GameObject:
   m_ObjectHideFlags: 0
@@ -5271,3 +5317,4 @@ SceneRoots:
   - {fileID: 227058484}
   - {fileID: 1844262588}
   - {fileID: 1703046033}
+  - {fileID: 1797060352}

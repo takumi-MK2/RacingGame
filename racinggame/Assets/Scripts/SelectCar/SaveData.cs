@@ -12,7 +12,6 @@ namespace SD
         */
         public Material color1P, color2P, color3P, color4P; //プレイヤーごとの色マテリアル
         public int carChoice1P, carChoice2P, carChoice3P, carChoice4P; //選んだ車の種類
-        public double time1P, time2P, time3P, time4P; //クリアタイム
         //ChangeCarColor CCC;
 
         void Start()
