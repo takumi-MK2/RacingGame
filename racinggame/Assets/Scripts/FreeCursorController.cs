@@ -23,7 +23,12 @@ public class FreeCursorController : MonoBehaviour
     }
 
     // スティック入力（Input Systemから自動で呼ばれる）
-    public void OnMove(InputValue value) => _moveInput = value.Get<Vector2>();
+    public void OnMove(InputValue value)
+    {
+        _moveInput = value.Get<Vector2>();
+        // これを足す
+        Debug.Log($"入力が来ました！: {_moveInput}");
+    }
 
     // Aボタン入力（Input Systemから自動で呼ばれる）
     public void OnFire(InputValue value)
@@ -44,15 +49,38 @@ public class FreeCursorController : MonoBehaviour
     // 透明な指でボタンを突く処理
     private void CheckAndClickButton()
     {
+        // --- 修正ポイント：毎回最新の状態をチェックする ---
+        if (_eventSystem == null)
+        {
+            _eventSystem = EventSystem.current;
+            // もしこれでも取れないなら、シーン全体から強引に探す
+            if (_eventSystem == null)
+            {
+                _eventSystem = Object.FindAnyObjectByType<EventSystem>();
+            }
+        }
+
+        if (_raycaster == null)
+        {
+            _raycaster = GetComponentInParent<GraphicRaycaster>();
+        }
+
+        // --- ここで最終チェック（これでもダメなら中断する） ---
+        if (_eventSystem == null || _raycaster == null)
+        {
+            Debug.LogWarning("EventSystemまたはRaycasterがまだ見つかりません。");
+            return;
+        }
+
+        // 56行目：ここで新しいデータを作る（_eventSystemが確実にある状態で！）
         PointerEventData pointerData = new PointerEventData(_eventSystem);
-        pointerData.position = transform.position; // カーソルの現在位置
+        pointerData.position = transform.position;
 
         List<RaycastResult> results = new List<RaycastResult>();
         _raycaster.Raycast(pointerData, results);
 
         foreach (var result in results)
         {
-            // 当たったものの中に「Button」コンポーネントがあれば実行
             Button btn = result.gameObject.GetComponent<Button>();
             if (btn != null)
             {
