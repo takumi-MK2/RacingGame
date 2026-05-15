@@ -1,26 +1,27 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using CCC;
+using kihi_CCC;
 
-public class Controller1P : ChangeCarColor
+public class Controller1P : kihi_ChangeCarColor
 {
-    int pNum = 1;
+    public int pNum = 1;
     bool canOparate = true;
 
     int vector;
     public GameObject cursor; //プレイヤーごとのカーソルをアタッチ
     public Material playerColor; //プレイヤーごとの色マテリアル
     public GameObject Popup; //性能表示のパネル
-    /*bool singleShori; //無駄な処理を減らすためのbool*/
+    bool singleShori; //無駄な処理を減らすためのbool
+    bool notRen; //コントローラーの連続処理防止用bool
 
-
+    kihi_ChangeCarColor CCC;
     [SerializeField] PlayerDataManager PDM;
 
     void Start()
     {
         PDM = FindAnyObjectByType<PlayerDataManager>();
 
-        if (PDM.playerCount<pNum) canOparate = false;
+        //if (PDM.playerCount<pNum) canOparate = false;
 
         if (canOparate)
         {
@@ -46,7 +47,7 @@ public class Controller1P : ChangeCarColor
             }
             else
             {
-                //CtrlbyPad();
+                CtrlbyPad();
             }
 
 
@@ -60,14 +61,14 @@ public class Controller1P : ChangeCarColor
         {
             choice--;
             cursor.transform.Translate(Vector3.up * 300 * vector);
-            /*singleShori = true;*/
+            singleShori = true;
         }
         //下キー
         if (choice < 2 && (Input.GetKeyDown(KeyCode.S)))
         {
             choice++;
             cursor.transform.Translate(Vector3.down * 300 * vector);
-            /*singleShori = true;*/
+            singleShori = true;
         }
         //性能表示キー
         if (Input.GetKey(KeyCode.X))
@@ -77,7 +78,7 @@ public class Controller1P : ChangeCarColor
         else Popup.SetActive(false);
     }
 
-    /*
+
     void CtrlbyPad()
     {
         var gamepad = Gamepad.current;
@@ -86,27 +87,28 @@ public class Controller1P : ChangeCarColor
 
         if (((vertical > 0.4f && !notRen) || gamepad.dpad.up.wasPressedThisFrame) && choice > 0)
         {
-            choice--;
-            cursor.transform.Translate(Vector3.up * 300 * vector);
-            singleShori = true;
+            CCC.CursorUp(cursor, pNum);
+
+            //choice--;
+            //cursor.transform.Translate(Vector3.up * 300 * vector);
+            //singleShori = true;
             Debug.Log($"上へ入力: {vertical:F2}");
 
             notRen = true;
         }
         if (((vertical < -0.4f && !notRen) || gamepad.dpad.down.wasPressedThisFrame) && choice < 2)
         {
-            choice++;
-            cursor.transform.Translate(Vector3.down * 300 * vector);
-            singleShori = true;
+            Debug.Log("CursorDown実行したいね");
+
+            CCC.CursorDown(cursor, pNum);
+
+            //choice++;
+            //cursor.transform.Translate(Vector3.down * 300 * vector);
+            //singleShori = true;
             Debug.Log($"下へ入力: {vertical:F2}");
 
             notRen = true;
         }
     }
-    */
+
 }
-
-/*
- 
-
- */

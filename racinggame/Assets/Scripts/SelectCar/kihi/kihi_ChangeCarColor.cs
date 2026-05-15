@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using SD;
 
-namespace CCC
+namespace kihi_CCC
 {
     public class kihi_ChangeCarColor : MonoBehaviour
     {
@@ -247,10 +247,10 @@ namespace CCC
                     break;
             }
             */
-
+            
             // 1. コントローラーが接続されているかチェック
             var gamepad = Gamepad.current;
-            if (gamepad == null) Debug.Log("コントローラーが接続されていません");
+            if (gamepad == null) Debug.Log("GamePad Error");
 
             if (gamepad.buttonNorth.wasPressedThisFrame)
             {
@@ -320,6 +320,8 @@ namespace CCC
 
         public void CursorUp(GameObject kaso,int pn)
         {
+            Debug.Log("CursorUp実行");
+
             int vector;
             if (pn % 2 == 0) vector = -1;
             else vector = 1;
@@ -329,6 +331,8 @@ namespace CCC
 
         public void CursorDown(GameObject kaso, int pn)
         {
+            Debug.Log("CursorDown実行");
+
             int vector;
             if (pn % 2 == 0) vector = -1;
             else vector = 1;
@@ -336,9 +340,7 @@ namespace CCC
             kaso.transform.Translate(Vector3.down * 300 * vector);
         }
 
-        public void DispPopup()
-        {
-            //Popup.SetActive(true);
-        }
+
+
     }
 }

@@ -26,6 +26,11 @@ public class PlayerDataManager : MonoBehaviour
         }
     }
 
+    public void DecidePlayerCount(int pCnt)
+    {
+        playerCount = pCnt;
+    }
+
     // 全員の投票が終わった後に呼ぶ抽選関数
     public void DecideStage(string[] stageNames)
     {

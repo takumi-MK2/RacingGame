@@ -1,49 +1,63 @@
 using UnityEngine;
 using SD;
 
-public class RestrictOperationFromNums : MonoBehaviour
+namespace ROFN
 {
-    int pNum;
-    bool doit;
-
-    [SerializeField] SaveData SD;
-    [SerializeField] PlayerDataManager PDM;
-
-    public GameObject cursor3P, cursor4P,
-                      car3P, car4P;
-
-
-    void Start()
+    public class RestrictOperationFromNums : MonoBehaviour
     {
-        SD = FindAnyObjectByType<SaveData>();
-        PDM = FindAnyObjectByType<PlayerDataManager>();
+        int pNum;
+        bool doit;
 
-        pNum = PDM.playerCount;
-        doit = false;
-        Debug.Log("うごいてるわよ");
-    }
+        [SerializeField] SaveData SD;
+        [SerializeField] PlayerDataManager PDM;
 
-    void Update()
-    {
-        if (!doit)
+        public GameObject cursor3P, cursor4P,
+                          car3P, car4P;
+
+
+        void Start()
         {
-            switch (pNum)
-            {
-                case 2: 
-                    cursor3P.SetActive(false);
-                    car3P.SetActive(false);
-                    cursor4P.SetActive(false);
-                    car4P.SetActive(false);
-                    break;
-                case 3:
-                    cursor4P.SetActive(false);
-                    car4P.SetActive(false);
-                    break;
-            }
+            SD = FindAnyObjectByType<SaveData>();
+            PDM = FindAnyObjectByType<PlayerDataManager>();
 
-            doit = true;
+            pNum = PDM.playerCount;
+            doit = false;
+            Debug.Log("うごいてるわよ");
         }
 
+        void LateUpdate()
+        {
+            DOIT();
+
+        }
+
+        public void DOIT()
+        {
+            //if (!doit)
+            //{
+                switch (pNum)
+                {
+                    case 2:
+                        cursor3P.SetActive(false);
+                        car3P.SetActive(false);
+                        SD.carChoice3P = -999;
+                        cursor4P.SetActive(false);
+                        car4P.SetActive(false);
+                        SD.carChoice4P = -999;
+                        Debug.Log($"{SD.carChoice3P},{SD.carChoice4P}");
+                        break;
+                    case 3:
+                        cursor4P.SetActive(false);
+                        car4P.SetActive(false);
+                        SD.carChoice4P = -999;
+                        Debug.Log($"{SD.carChoice4P}");
+
+                        break;
+                }
+
+            //    doit = true;
+            //}
+        }
 
     }
 }

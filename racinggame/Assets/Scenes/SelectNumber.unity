@@ -579,7 +579,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2923ebc3804704fa0889a75e2751ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDataManager
+  selectedStageIndices: 
   playerCount: 2
+  finalStageName: 
 --- !u!4 &1676221612
 Transform:
   m_ObjectHideFlags: 0
@@ -853,7 +855,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1676221611}
         m_TargetAssemblyTypeName: PlayerDataManager, Assembly-CSharp
-        m_MethodName: SetPlayerCount
+        m_MethodName: DecidePlayerCount
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1182,7 +1184,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1676221611}
         m_TargetAssemblyTypeName: PlayerDataManager, Assembly-CSharp
-        m_MethodName: SetPlayerCount
+        m_MethodName: DecidePlayerCount
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1303,7 +1305,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1676221611}
         m_TargetAssemblyTypeName: PlayerDataManager, Assembly-CSharp
-        m_MethodName: SetPlayerCount
+        m_MethodName: DecidePlayerCount
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

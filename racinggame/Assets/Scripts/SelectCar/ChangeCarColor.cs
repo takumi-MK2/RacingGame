@@ -7,19 +7,29 @@ namespace CCC
 {
     public class ChangeCarColor : MonoBehaviour
     {
-        [Header("ヘッダーいれなきゃ")]
+        [Header("プレイヤー番号")]
         public int playerNum; //プレイヤー番号
+        [Header("プレイヤーごとのカーソル")]
         public GameObject cursor; //プレイヤーごとのカーソルをアタッチ
-        public GameObject cube, sphere, plain; //車のモデル(今は仮オブジェクト)
+        [Header("車")]
+        public GameObject cube; //車のモデル(今は仮オブジェクト)
+        public GameObject sphere; 
+        public GameObject plain; 
+        [Header("プレイヤーカラー")]
         public Material playerColor; //プレイヤーごとの色マテリアル
+        [Header("選んだ車の番号")]
         public int choice; //車種番号
-        int vector;
+        [Header("性能表示のパネル")]
         public GameObject Popup; //性能表示のパネル
+        [Header("データ受け渡しのやつ(自動取得)")]
         [SerializeField] SaveData SD; //他シーンに飛ばせる！保存データ
-        bool singleShori; //無駄な処理を減らすためのbool
-        //public Renderer rnd;
-        bool notRen; //コントローラーの連続処理防止用bool
+
+        [Header("これはデバッグ用のやつ")]
         public int nunumm; //ひとつのコントローラーで４人の操作を切り替えられるわよ！
+        int vector;
+        bool singleShori; //無駄な処理を減らすためのbool
+        bool notRen; //コントローラーの連続処理防止用bool
+        //public Renderer rnd;
         //[SerializeField] PlayerDataManager PDM;
         //public bool CanOparate;
 
@@ -40,7 +50,6 @@ namespace CCC
             Popup.SetActive(false);
             notRen = false;
 
-            SD = FindAnyObjectByType<SaveData>();
             //PDM = FindAnyObjectByType<PlayerDataManager>();
         }
 
