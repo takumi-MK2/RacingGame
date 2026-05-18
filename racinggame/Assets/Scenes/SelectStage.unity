@@ -481,6 +481,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FreeCursorController
   moveSpeed: 800
+  _rectTransform: {fileID: 0}
+  moveAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Move
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 03fee7a9-7619-4738-b284-7b4f1eec13e4
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -7773757269134763473, guid: 9ff1228bb2c608a4c9fe9314be9ea40c,
+      type: 3}
+  fireAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Fire
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: e679fb40-6972-4e9f-a6a8-c9b4c58e5de2
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 4951671997400775581, guid: 9ff1228bb2c608a4c9fe9314be9ea40c,
+      type: 3}
 --- !u!114 &1001761331
 MonoBehaviour:
   m_ObjectHideFlags: 0
