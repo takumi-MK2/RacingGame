@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 using kihi_CCC;
 using SD;
 
-public class Controller1P : MonoBehaviour
+public class Controller2P : MonoBehaviour
 {
-    public int pNum = 1;
+    public int pNum = 2;
     bool canOparate = true;
 
     int vector;
@@ -52,17 +52,15 @@ public class Controller1P : MonoBehaviour
                 CtrlbyPad();
             }
 
-            SD.carChoice1P = choice;
+            SD.carChoice2P = choice;
         }
     }
 
     void CtrlbyKeyboard()
     {
         //上キー
-        if (choice > 0 && (Input.GetKeyDown(KeyCode.W)))
+        if (choice > 0 && (Input.GetKeyDown(KeyCode.R)))
         {
-            Debug.Log($"Up,{cursor.name}, {pNum}");
-
             CCC.CursorUp(cursor, pNum);
 
             choice--;
@@ -70,9 +68,8 @@ public class Controller1P : MonoBehaviour
             //singleShori = true;
         }
         //下キー
-        if (choice < 2 && (Input.GetKeyDown(KeyCode.S)))
+        if (choice < 2 && (Input.GetKeyDown(KeyCode.F)))
         {
-            Debug.Log($"Down,{cursor.name}, {pNum}");
             CCC.CursorDown(cursor, pNum);
 
             choice++;
@@ -90,8 +87,8 @@ public class Controller1P : MonoBehaviour
 
     void CtrlbyPad()
     {
-        var gamepad = Gamepad.all[0];
-        if (gamepad == null) Debug.Log("コントローラーが接続されていません");
+        var gamepad = Gamepad.all[1];
+        //if (gamepad == null) Debug.Log("コントローラーが接続されていません");
         float vertical = gamepad.leftStick.y.ReadValue();
 
         if (((vertical > 0.4f && !notRen) || gamepad.dpad.up.wasPressedThisFrame) && choice > 0)
@@ -120,15 +117,11 @@ public class Controller1P : MonoBehaviour
         }
         else Popup.SetActive(false);
 
-        if (gamepad.buttonEast.wasPressedThisFrame)
-        {
-            SceneManager.LoadScene("Assets/Scenes/SampleScene.unity");
-        }
-
         if (notRen && Mathf.Abs(vertical) > 0.4f)
         {
             notRen = true;
         }
         else notRen = false;
     }
+
 }

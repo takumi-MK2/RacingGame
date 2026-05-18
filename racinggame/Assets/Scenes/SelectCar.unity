@@ -1185,6 +1185,8 @@ GameObject:
   m_Component:
   - component: {fileID: 460657420}
   - component: {fileID: 460657421}
+  - component: {fileID: 460657423}
+  - component: {fileID: 460657422}
   m_Layer: 0
   m_Name: Controller1P
   m_TagString: Untagged
@@ -1214,7 +1216,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460657418}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96a5c205507bd0f468940f40b0620f73, type: 3}
   m_Name: 
@@ -1227,6 +1229,44 @@ MonoBehaviour:
   playerColor: {fileID: 2100000, guid: 681d2b7da1f4d2347a67f39d32dbfa47, type: 2}
   choice: 1
   Popup: {fileID: 1322331352}
+  SD: {fileID: 1275752452}
+  nunumm: 1
+--- !u!114 &460657422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460657418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b63386bf7e86e1248a5b8830c8322598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Controller1P
+  pNum: 1
+  cursor: {fileID: 1148869975}
+  playerColor: {fileID: 2100000, guid: 681d2b7da1f4d2347a67f39d32dbfa47, type: 2}
+  Popup: {fileID: 1322331352}
+  choice: 1
+  CCC: {fileID: 460657423}
+  PDM: {fileID: 0}
+  SD: {fileID: 1275752452}
+--- !u!114 &460657423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460657418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::kihi_CCC.kihi_ChangeCarColor
+  cube: {fileID: 1034335182574022850}
+  sphere: {fileID: 5325688523293022136}
+  plain: {fileID: 6416848022221244000}
+  choice: 1
   SD: {fileID: 1275752452}
   nunumm: 1
 --- !u!1 &460707808
@@ -2726,6 +2766,8 @@ GameObject:
   m_Component:
   - component: {fileID: 963648047}
   - component: {fileID: 963648048}
+  - component: {fileID: 963648050}
+  - component: {fileID: 963648049}
   m_Layer: 0
   m_Name: Controller2P
   m_TagString: Untagged
@@ -2755,7 +2797,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963648045}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96a5c205507bd0f468940f40b0620f73, type: 3}
   m_Name: 
@@ -2770,6 +2812,44 @@ MonoBehaviour:
   Popup: {fileID: 1121112305}
   SD: {fileID: 1275752452}
   nunumm: 0
+--- !u!114 &963648049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963648045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca2dbb3994fa7c44989ccffd9b9d0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Controller2P
+  pNum: 2
+  cursor: {fileID: 2014565410}
+  playerColor: {fileID: 2100000, guid: 907b9453099c296448a958c6e4d40b2c, type: 2}
+  Popup: {fileID: 1121112305}
+  choice: 1
+  CCC: {fileID: 963648050}
+  PDM: {fileID: 0}
+  SD: {fileID: 1275752452}
+--- !u!114 &963648050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963648045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::kihi_CCC.kihi_ChangeCarColor
+  cube: {fileID: 865277187}
+  sphere: {fileID: 708379890}
+  plain: {fileID: 468393835}
+  choice: 1
+  SD: {fileID: 1275752452}
+  nunumm: 2
 --- !u!1 &1080674200
 GameObject:
   m_ObjectHideFlags: 0
@@ -3503,6 +3583,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1300520759}
   - component: {fileID: 1300520760}
+  - component: {fileID: 1300520761}
+  - component: {fileID: 1300520762}
   m_Layer: 0
   m_Name: Controller3P
   m_TagString: Untagged
@@ -3532,7 +3614,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300520757}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96a5c205507bd0f468940f40b0620f73, type: 3}
   m_Name: 
@@ -3547,6 +3629,44 @@ MonoBehaviour:
   Popup: {fileID: 230453389}
   SD: {fileID: 1275752452}
   nunumm: 0
+--- !u!114 &1300520761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300520757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::kihi_CCC.kihi_ChangeCarColor
+  cube: {fileID: 1429225135}
+  sphere: {fileID: 1624194945}
+  plain: {fileID: 1300202399}
+  choice: 1
+  SD: {fileID: 1275752452}
+  nunumm: 3
+--- !u!114 &1300520762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300520757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc16ee0e6a0e64943979427cd5ec76de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Controller3P
+  pNum: 3
+  cursor: {fileID: 1855302722}
+  playerColor: {fileID: 2100000, guid: 87335a24970111e48b0bddb1f85e93f4, type: 2}
+  Popup: {fileID: 230453389}
+  choice: 1
+  CCC: {fileID: 1300520761}
+  PDM: {fileID: 0}
+  SD: {fileID: 1275752452}
 --- !u!1 &1322331352
 GameObject:
   m_ObjectHideFlags: 0
@@ -4613,6 +4733,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797060352}
   - component: {fileID: 1797060351}
+  - component: {fileID: 1797060353}
   m_Layer: 0
   m_Name: pu
   m_TagString: Untagged
@@ -4653,6 +4774,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1797060353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797060350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da8ee5bcda92cb408c0ecaf715f3519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AssignController
 --- !u!1 &1844262584
 GameObject:
   m_ObjectHideFlags: 0
@@ -5265,6 +5398,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2045020722}
   - component: {fileID: 2045020723}
+  - component: {fileID: 2045020725}
+  - component: {fileID: 2045020724}
   m_Layer: 0
   m_Name: Controller4P
   m_TagString: Untagged
@@ -5294,7 +5429,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045020720}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96a5c205507bd0f468940f40b0620f73, type: 3}
   m_Name: 
@@ -5309,6 +5444,44 @@ MonoBehaviour:
   Popup: {fileID: 1376141585}
   SD: {fileID: 1275752452}
   nunumm: 0
+--- !u!114 &2045020724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045020720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099dc625b60570e46a5025caef960a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Controller4P
+  pNum: 4
+  cursor: {fileID: 2074724795}
+  playerColor: {fileID: 2100000, guid: c69922b3fc792ed4c8518f0918dcbdba, type: 2}
+  Popup: {fileID: 1376141585}
+  choice: 1
+  CCC: {fileID: 2045020725}
+  PDM: {fileID: 0}
+  SD: {fileID: 1275752452}
+--- !u!114 &2045020725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045020720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::kihi_CCC.kihi_ChangeCarColor
+  cube: {fileID: 1952927308}
+  sphere: {fileID: 460707808}
+  plain: {fileID: 1176330265}
+  choice: 1
+  SD: {fileID: 1275752452}
+  nunumm: 4
 --- !u!1 &2066185791
 GameObject:
   m_ObjectHideFlags: 0

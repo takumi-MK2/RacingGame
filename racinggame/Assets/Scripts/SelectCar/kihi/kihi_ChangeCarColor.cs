@@ -1,7 +1,8 @@
+using SD;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using SD;
 
 namespace kihi_CCC
 {
@@ -13,7 +14,7 @@ namespace kihi_CCC
         public GameObject cube, sphere, plain; //車のモデル(今は仮オブジェクト)
         //public Material playerColor; //プレイヤーごとの色マテリアル
         public int choice; //車種番号
-        //int vector;
+        int vector;
         //public GameObject Popup; //性能表示のパネル
         [SerializeField] SaveData SD; //他シーンに飛ばせる！保存データ
         /*bool singleShori; //無駄な処理を減らすためのbool*/
@@ -23,13 +24,15 @@ namespace kihi_CCC
 
         void Start()
         {
-            nunumm = 1;
+            //nunumm = 1;
+            ChangeObject();
+
             /*singleShori = true;*/
 
             //初期位置は一番上(choice:0)
-            cube.SetActive(true);
-            sphere.SetActive(false);
-            plain.SetActive(false);
+            //cube.SetActive(true);
+            //sphere.SetActive(false);
+            //plain.SetActive(false);
 
             ////カーソルの動きを制御するためのやつ
             //if (playerNum == 1 || playerNum == 3) vector = 1;
@@ -37,8 +40,13 @@ namespace kihi_CCC
 
             //Popup.SetActive(false);
             /*notRen = false;*/
+
+            if (nunumm % 2 == 0) vector = -1;
+            else vector = 1;
+            Debug.Log($"{vector}");
         }
 
+        /*
         void Update()
         {
             //Erabu();
@@ -53,6 +61,7 @@ namespace kihi_CCC
                 SceneManager.LoadScene("Assets/Scenes/SampleScene.unity");
             }
         }
+        */
 
         ////車種を選択する動作////
         void Erabu()
@@ -192,27 +201,29 @@ namespace kihi_CCC
                     break;
             }
 
-            //switch (playerNum)
-            //{
-            //    //SaveDataへ車種番号を通達
-            //    case 1:
-            //        SD.carChoice1P = choice;
-            //        break;
-            //    case 2:
-            //        SD.carChoice2P = choice;
-            //        break;
-            //    case 3:
-            //        SD.carChoice3P = choice;
-            //        break;
-            //    case 4:
-            //        SD.carChoice4P = choice;
-            //        break;
-            //}
 
-            //Debug.Logで車種変更履歴を表示
-            //SD.CCLog(playerNum);
+            /*
+            switch (playerNum)
+            {
+                //SaveDataへ車種番号を通達
+                case 1:
+                    SD.carChoice1P = choice;
+                    break;
+                case 2:
+                    SD.carChoice2P = choice;
+                    break;
+                case 3:
+                    SD.carChoice3P = choice;
+                    break;
+                case 4:
+                    SD.carChoice4P = choice;
+                    break;
+            }
 
-            //rnd.material = playerColor;
+            Debug.Logで車種変更履歴を表示
+            SD.CCLog(playerNum);
+
+            rnd.material = playerColor;*/
 
             /*singleShori = false;*/
         }
@@ -320,24 +331,17 @@ namespace kihi_CCC
 
         public void CursorUp(GameObject kaso,int pn)
         {
-            Debug.Log("CursorUp実行");
-
-            int vector;
-            if (pn % 2 == 0) vector = -1;
-            else vector = 1;
-
+            Debug.Log(vector);
             kaso.transform.Translate(Vector3.up * 300 * vector);
+            choice--;
+            ChangeObject();
         }
 
         public void CursorDown(GameObject kaso, int pn)
         {
-            Debug.Log("CursorDown実行");
-
-            int vector;
-            if (pn % 2 == 0) vector = -1;
-            else vector = 1;
-
             kaso.transform.Translate(Vector3.down * 300 * vector);
+            choice++;
+            ChangeObject();
         }
 
 
