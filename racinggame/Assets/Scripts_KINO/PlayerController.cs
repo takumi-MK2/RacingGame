@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         {
             LapCount--;
             if (LapCount < 0) LapCount = 0;
-            Debug.Log("‹t‘– Lap " + LapCount);
+            Debug.Log("‹t‘–");
 
             LapEvent?.Invoke();
 

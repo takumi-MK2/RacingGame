@@ -50,14 +50,14 @@ public class GameController : MonoBehaviour
         player.LapEvent.AddListener(OnLap);
         player.GoalEvent.AddListener(OnGoal);
 
-        timerText.text = "Time : 000.0 s";
+        timerText.text = "Time : 000.000 s";
         lapText.text = "Lap : 1/" + player.GoalLap;
     }
 
 
     void Update()
     {
-        timerText.text = "Time : 000.0 s";
+        timerText.text = "Time : 000.000 s";
         // ステートがReadyのとき.
         if (CurrentState == PlayState.Ready)
         {
@@ -77,7 +77,7 @@ public class GameController : MonoBehaviour
                 // 開始.
                 StartPlay();
                 intNum = 0;
-                countdownText.text = "GYAO!!";
+                countdownText.text = "START!!";
 
                 // Start表示を少しして消す.
                 StartCoroutine(WaitErase());
@@ -87,13 +87,14 @@ public class GameController : MonoBehaviour
         else if (CurrentState == PlayState.Play)
         {
             timer += Time.deltaTime;
-            timerText.text = "Time : " + timer.ToString("000.0") + " s";
+            timerText.text = "Time : " + timer.ToString("000.000") + " s";
         }
-        else
+        /*else
         {
             timer = 0;
-            timerText.text = "Time : 000.0 s";
+            timerText.text = "Time : 000.000 s";
         }
+        */
     }
 
 
