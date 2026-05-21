@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9c532291ce6d18e4fb3d330d39cdda14
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/Roads/Components/Bridge_column_small.prefab
+  uploadId: 422782

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2ed87b1cea0da6640889869f1cf2689e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/RoadSigns/EU/Road_sign_EU_speed_limit.prefab
+  uploadId: 422782

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d51ae775f64291e47a3a029ecc12e405
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/RoadSigns/US/Road_sign_octo_US_stop.prefab
+  uploadId: 422782

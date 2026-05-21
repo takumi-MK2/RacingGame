@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b5c128e3f31c7f74f9c9c8584b726a39
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/RoadSigns/Components/Handlers/Road_sign_hor_handle_comp.prefab
+  uploadId: 422782

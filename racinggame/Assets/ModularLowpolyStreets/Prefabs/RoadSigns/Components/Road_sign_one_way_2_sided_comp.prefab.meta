@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 661d4a2725cb1a24fb7d239638f7fa39
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/RoadSigns/Components/Road_sign_one_way_2_sided_comp.prefab
+  uploadId: 422782

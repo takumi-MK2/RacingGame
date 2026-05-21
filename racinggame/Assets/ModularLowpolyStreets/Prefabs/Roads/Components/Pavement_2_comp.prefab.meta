@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: da3df618e35efed4eb02d92eb60361fa
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/Roads/Components/Pavement_2_comp.prefab
+  uploadId: 422782

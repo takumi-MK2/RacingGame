@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 288e49bfca5bb104b9fbc08e75c17509
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/TrafficLights/Components/EU/Traffic_light_EU_comp.prefab
+  uploadId: 422782

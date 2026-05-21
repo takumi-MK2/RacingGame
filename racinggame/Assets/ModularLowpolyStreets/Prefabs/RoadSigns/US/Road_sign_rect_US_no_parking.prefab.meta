@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 560389d02965bec4bb1c480dde86d5c3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/RoadSigns/US/Road_sign_rect_US_no_parking.prefab
+  uploadId: 422782

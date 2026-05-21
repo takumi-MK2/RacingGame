@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a746b90fb250e1a4b9da6fc9f81178fc
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/Roads/Road_1_line_small_turn_walk.prefab
+  uploadId: 422782

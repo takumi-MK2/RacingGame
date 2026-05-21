@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 348dc0b064f17e6408e26bc4b65a0fd7
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/Roads/Components/Pavement_4_turn_2_comp.prefab
+  uploadId: 422782

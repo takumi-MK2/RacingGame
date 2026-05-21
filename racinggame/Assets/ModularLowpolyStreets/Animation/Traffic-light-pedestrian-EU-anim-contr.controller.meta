@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a51f6f030e9bfa24c81ae3a8067f6644
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Animation/Traffic-light-pedestrian-EU-anim-contr.controller
+  uploadId: 422782

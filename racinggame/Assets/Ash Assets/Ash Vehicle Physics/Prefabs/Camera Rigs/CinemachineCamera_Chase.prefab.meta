@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 584526281a774fb4e97c1a57cace0fb0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187803
+  packageName: Ash Vehicle Physics
+  packageVersion: 3.3
+  assetPath: Assets/Ash Assets/Ash Vehicle Physics/Prefabs/Camera Rigs/CinemachineCamera_Chase.prefab
+  uploadId: 886796

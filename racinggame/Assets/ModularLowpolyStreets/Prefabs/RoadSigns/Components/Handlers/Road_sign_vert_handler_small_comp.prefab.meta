@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8b4439235c00c8c46b3ec83c3c17a6d6
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/RoadSigns/Components/Handlers/Road_sign_vert_handler_small_comp.prefab
+  uploadId: 422782

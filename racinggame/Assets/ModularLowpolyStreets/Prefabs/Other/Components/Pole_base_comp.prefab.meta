@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 61d3b1de098b6e449a8c6156bea301be
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/Other/Components/Pole_base_comp.prefab
+  uploadId: 422782

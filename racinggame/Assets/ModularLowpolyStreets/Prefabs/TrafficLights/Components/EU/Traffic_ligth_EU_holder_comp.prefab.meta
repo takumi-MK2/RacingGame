@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e42ae4fe20e50564caa95712e5e956cf
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/TrafficLights/Components/EU/Traffic_ligth_EU_holder_comp.prefab
+  uploadId: 422782

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2377c71512da1b542bf0d2cceeb85c6c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/RoadSigns/Components/Road_sign_rect_3_comp.prefab
+  uploadId: 422782

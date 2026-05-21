@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ac0505ecababea0499712d58c83b898b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/RoadSigns/Components/Handlers/Road_sign_pole_comp.prefab
+  uploadId: 422782

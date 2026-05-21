@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: edebe52fdf83c8c4b835d8cde0e6122c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/Roads/Components/Road_split_wide_comp.prefab
+  uploadId: 422782

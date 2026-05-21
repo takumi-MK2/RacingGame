@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 19029ebcbae02954bacc7e768b0dc4e0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/TrafficLights/Components/US/Traffic_ligth_US_holder_comp.prefab
+  uploadId: 422782

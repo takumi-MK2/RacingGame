@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8fcbafbef584e8c43bd99e52e25ca2e9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/TrafficLights/US/Traffic_light_US_hang.prefab
+  uploadId: 422782

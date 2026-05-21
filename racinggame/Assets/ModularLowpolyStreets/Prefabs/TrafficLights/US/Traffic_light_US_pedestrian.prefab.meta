@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6c7d041724a6ce744821f86b468bd45c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/TrafficLights/US/Traffic_light_US_pedestrian.prefab
+  uploadId: 422782

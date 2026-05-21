@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c4659eddc6bdd7043b38d4305cdafe5d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/Roads/Components/Bridge_small_pillar.prefab
+  uploadId: 422782

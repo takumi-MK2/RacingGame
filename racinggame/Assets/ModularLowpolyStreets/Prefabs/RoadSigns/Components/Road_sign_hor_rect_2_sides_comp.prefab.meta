@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b8022571d4b8f18409f9663160d38d16
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191135
+  packageName: Modular Lowpoly Streets
+  packageVersion: 1.0
+  assetPath: Assets/ModularLowpolyStreets/Prefabs/RoadSigns/Components/Road_sign_hor_rect_2_sides_comp.prefab
+  uploadId: 422782
