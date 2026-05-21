@@ -85,6 +85,11 @@ public class Controller1P : MonoBehaviour
             Popup.SetActive(true);
         }
         else Popup.SetActive(false);
+
+        if (Input.GetKey(KeyCode.Return))
+        {
+            SceneManager.LoadScene("SelectStage");
+        }
     }
 
 
@@ -122,7 +127,7 @@ public class Controller1P : MonoBehaviour
 
         if (gamepad.buttonEast.wasPressedThisFrame)
         {
-            SceneManager.LoadScene("Assets/Scenes/SampleScene.unity");
+            SceneManager.LoadScene("SelectStage");
         }
 
         if (notRen && Mathf.Abs(vertical) > 0.4f)

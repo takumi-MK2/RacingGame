@@ -77,7 +77,7 @@ public class Controller2P : MonoBehaviour
             //singleShori = true;
         }
         //性能表示キー
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKey(KeyCode.V))
         {
             Popup.SetActive(true);
         }
