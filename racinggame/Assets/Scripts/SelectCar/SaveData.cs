@@ -1,5 +1,6 @@
 using UnityEngine;
 //using CCC;
+//using ROFN;
 
 namespace SD
 {
@@ -12,8 +13,8 @@ namespace SD
         */
         public Material color1P, color2P, color3P, color4P; //プレイヤーごとの色マテリアル
         public int carChoice1P, carChoice2P, carChoice3P, carChoice4P; //選んだ車の種類
-        public double time1P, time2P, time3P, time4P; //クリアタイム
         //ChangeCarColor CCC;
+        //RestrictOperationFromNums ROFN;
 
         void Start()
         {
@@ -21,6 +22,8 @@ namespace SD
             carChoice2P = 0;
             carChoice3P = 0;
             carChoice4P = 0;
+
+            //ROFN.DOIT();
 
             DontDestroyOnLoad(this.gameObject);
         }
