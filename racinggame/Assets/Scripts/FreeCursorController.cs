@@ -7,51 +7,61 @@ using UnityEngine.EventSystems;
 public class FreeCursorController : MonoBehaviour
 {
     public float moveSpeed = 800f;
+
+    // 【修正】インスペクターでセットしたオブジェクトが固定されるようにする
     [SerializeField] private RectTransform _rectTransform;
 
-    // ★修正ポイント：インスペクターから入力を直接紐付けます
-    [SerializeField] private InputActionProperty moveAction;
-    [SerializeField] private InputActionProperty fireAction;
+    private Vector2 _moveInput;
+    private bool _isFirePressed;
 
     private GraphicRaycaster _raycaster;
     private EventSystem _eventSystem;
 
     void Start()
     {
-        _rectTransform = GetComponent<RectTransform>();
+        // もしインスペクターが空っぽだったら、自動で自分自身を設定する（保険）
+        if (_rectTransform == null)
+        {
+            _rectTransform = GetComponent<RectTransform>();
+        }
+
         _raycaster = GetComponentInParent<GraphicRaycaster>();
         _eventSystem = EventSystem.current;
     }
 
-    // ★修正ポイント：ゲーム中、常にボタンが押されたかを監視する形に変えます
     void Update()
     {
-        // 1. スティックの入力を直接読み取る
-        Vector2 moveInput = moveAction.action.ReadValue<Vector2>();
-
         // 座標計算
-        Vector2 nextPos = _rectTransform.anchoredPosition + (moveInput * moveSpeed * Time.deltaTime);
+        Vector2 nextPos = _rectTransform.anchoredPosition + (_moveInput * moveSpeed * Time.deltaTime);
         _rectTransform.anchoredPosition = nextPos;
 
-        // 2. ボタンの入力を直接読み取る（押した瞬間だけ実行）
-        if (fireAction.action.WasPressedThisFrame())
+        // ★【座標確認用】スティックが動いている間だけ、現在の座標をログに出す
+        if (_moveInput.magnitude > 0.01f)
+        {
+            Debug.Log($"{gameObject.name} の現在の座標: {_rectTransform.anchoredPosition}");
+        }
+
+        // ボタンが押されたらクリック処理
+        if (_isFirePressed)
         {
             CheckAndClickButton();
+            _isFirePressed = false; // 1回押したらリセット
         }
     }
 
-    // ゲーム開始時にボタン入力を有効にする
-    void OnEnable()
+    // ★マルチプレイ用の入力受け取り口（Player Inputから自動で呼ばれる）
+    public void OnMove(InputValue value)
     {
-        moveAction.action.Enable();
-        fireAction.action.Enable();
+        _moveInput = value.Get<Vector2>();
     }
 
-    // ゲーム終了時に無効にする
-    void OnDisable()
+    public void OnFire(InputValue value)
     {
-        moveAction.action.Disable();
-        fireAction.action.Disable();
+        // ボタンを押した瞬間だけtrueにする
+        if (value.isPressed)
+        {
+            _isFirePressed = true;
+        }
     }
 
     private void CheckAndClickButton()
