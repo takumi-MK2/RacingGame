@@ -482,32 +482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FreeCursorController
   moveSpeed: 800
   _rectTransform: {fileID: 0}
-  moveAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Move
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 03fee7a9-7619-4738-b284-7b4f1eec13e4
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -7773757269134763473, guid: 9ff1228bb2c608a4c9fe9314be9ea40c,
-      type: 3}
-  fireAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Fire
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: e679fb40-6972-4e9f-a6a8-c9b4c58e5de2
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 4951671997400775581, guid: 9ff1228bb2c608a4c9fe9314be9ea40c,
-      type: 3}
 --- !u!114 &1001761331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -777,7 +751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1499463753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,7 +759,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499463752}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b16c6f78230fa4964a222622d8aae332, type: 3}
   m_Name: 
@@ -1754,6 +1728,6 @@ SceneRoots:
   - {fileID: 683935627}
   - {fileID: 1176652772}
   - {fileID: 2076036649}
-  - {fileID: 1499463754}
   - {fileID: 1133149343}
   - {fileID: 789033142}
+  - {fileID: 1499463754}
