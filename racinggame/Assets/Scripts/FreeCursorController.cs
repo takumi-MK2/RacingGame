@@ -31,9 +31,9 @@ public class FreeCursorController : MonoBehaviour
 
     void Update()
     {
-        // 座標計算
-        Vector2 nextPos = _rectTransform.anchoredPosition + (_moveInput * moveSpeed * Time.deltaTime);
-        _rectTransform.anchoredPosition = nextPos;
+        // ◯ 新しいコード（座標の計算方法を根本から変えます）
+        Vector3 moveVector = new Vector3(_moveInput.x, _moveInput.y, 0) * moveSpeed * Time.deltaTime;
+        _rectTransform.transform.Translate(moveVector);
 
         // ★【座標確認用】スティックが動いている間だけ、現在の座標をログに出す
         if (_moveInput.magnitude > 0.01f)
