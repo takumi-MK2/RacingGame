@@ -242,6 +242,9 @@ public class StageSelect_Arrows : MonoBehaviour
     // すべての演出が終わったら次のシーンへデータを渡して移動
     void MoveToNextScene()
     {
+        // 💡 最終的に移動するシーン名を決める変数（初期値はインスペクターで設定したデフォルト値）
+        string actualNextScene = nextSceneName;
+
         if (PlayerDataManager.instance != null)
         {
             List<int> votedStageIndices = new List<int>();
@@ -263,9 +266,27 @@ public class StageSelect_Arrows : MonoBehaviour
             }
         }
 
-        SceneManager.LoadScene(nextSceneName);
-    }
+        // ★【ここを追加：選ばれたステージ番号によって行くシーンを切り替える】
+        // finalChosenStageIndex は 0がステージ1、1がステージ2、2がステージ3… になっています。
+        switch (finalChosenStageIndex)
+        {
+            case 0:
+                actualNextScene = "Course01"; // 💡 ステージ1が選ばれたときの実際のシーン名
+                break;
+            case 1:
+                actualNextScene = "Course02"; // 💡 ステージ2が選ばれたときの実際のシーン名
+                break;
+            case 2:
+                actualNextScene = "GameMain"; // 💡 ステージ3が選ばれたときの実際のシーン名
+                break;
+                // ステージ4以上がある場合はここに case 3: ... と増やせます
+        }
 
+        Debug.Log($"次のシーンに移動します: {actualNextScene}");
+
+        // 決定した実際のシーン名でロードする
+        SceneManager.LoadScene(actualNextScene);
+    }
     // 💡 状態に合わせて矢印の動き（アニメーション）を細かく計算するメソッド
     // 💡 状態に合わせて矢印の動き（アニメーション）を細かく計算するメソッド
     void PositionArrowAnimate(PlayerCursor p, int playerIndex, int buttonIndex, int myOrder, int totalSelectors)
