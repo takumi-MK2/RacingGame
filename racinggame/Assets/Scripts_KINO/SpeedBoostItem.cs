@@ -1,14 +1,15 @@
 using System.Collections;
 using UnityEngine;
+using AshVP; // 【重要】carControllerのネームスペースを合わせる
 
 public class SpeedBoostItem : MonoBehaviour
 {
     [Header("ブースト設定")]
-    [Tooltip("加速させる力（大きくするほど一瞬で強く押し出します）")]
-    [SerializeField] private float boostForce = 20f;
+    [Tooltip("加速力（accelerationForce）にかける倍率（2倍なら通常時の2倍の加速に）")]
+    [SerializeField] private float boostMultiplier = 2.0f;
 
     [Tooltip("ブーストが持続する時間（秒）")]
-    [SerializeField] private float boostDuration = 2.0f;
+    [SerializeField] private float boostDuration = 3.0f;
 
     [Header("演出設定")]
     [Tooltip("アイテムの見た目のオブジェクト（消える演出用）")]
@@ -23,40 +24,37 @@ public class SpeedBoostItem : MonoBehaviour
     {
         if (isCollected) return;
 
-        // 触れたオブジェクト、またはその親からRigidbody（物理演算コンポーネント）を探す
-        Rigidbody rb = other.GetComponentInParent<Rigidbody>();
+        // 触れたオブジェクト、またはその親から carController を探す
+        carController car = other.GetComponentInParent<carController>();
 
-        if (rb != null)
+        if (car != null)
         {
-            // 持続的な加速処理を開始
-            StartCoroutine(BoostRoutine(rb));
+            // コルーチンを使ってブースト処理を開始
+            StartCoroutine(BoostRoutine(car));
         }
     }
 
-    private IEnumerator BoostRoutine(Rigidbody rb)
+    private IEnumerator BoostRoutine(carController car)
     {
         isCollected = true;
 
         // アイテムの見た目を非表示にする
         if (itemVisual != null) itemVisual.SetActive(false);
 
-        float elapsedTime = 0f;
-        Debug.Log("物理ブースト開始！");
+        // 1. 現在の元の加速力を記憶しておく
+        float originalForce = car.accelerationForce;
 
-        // 指定された時間の間、毎フレーム車を前方に押し続ける
-        while (elapsedTime < boostDuration)
+        // 2. 加速力を引き上げる
+        car.accelerationForce = originalForce * boostMultiplier;
+
+        // 指定された時間だけ待つ
+        yield return new WaitForSeconds(boostDuration);
+
+        // 3. 効果時間が切れたので、元の加速力に戻す（車がまだ存在する場合のみ）
+        if (car != null)
         {
-            // 車がまだ存在しているかチェック（安全のため）
-            if (rb == null) break;
-
-            // 車の「正面方向（rb.transform.forward）」に向かって力を加え続ける
-            rb.AddForce(rb.transform.forward * boostForce, ForceMode.Force);
-
-            elapsedTime += Time.deltaTime;
-            yield return null; // 1フレーム待つ
+            car.accelerationForce = originalForce;
         }
-
-        Debug.Log("物理ブースト終了");
 
         // アイテムの再出現処理
         if (respawnTime > 0f)

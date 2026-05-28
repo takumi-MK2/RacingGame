@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using AshVP; // 【追加】InputManagerのネームスペースを利用する
+using AshVP; //InputManagerのネームスペースを利用する
 
 public class GameController : MonoBehaviour
 {
@@ -105,7 +105,7 @@ public class GameController : MonoBehaviour
         SetPlayState(PlayState.Ready);
         countdownText.gameObject.SetActive(true);
 
-        // 【追加】カウントダウン中は入力を受け付けないようにコンポーネントをOFFにする
+        // カウントダウン中は入力を受け付けないようにコンポーネントをOFFにする
         if (carInputManager != null) carInputManager.enabled = false;
     }
 
@@ -116,7 +116,7 @@ public class GameController : MonoBehaviour
         Debug.Log("Start!!!");
         SetPlayState(PlayState.Play);
 
-        // 【追加】スタートしたら入力を受け付けるようにコンポーネントをONにする
+        // スタートしたら入力を受け付けるようにコンポーネントをONにする
         if (carInputManager != null) carInputManager.enabled = true;
     }
 
@@ -154,7 +154,7 @@ public class GameController : MonoBehaviour
         countdownText.text = "GOAL!!!";
         countdownText.gameObject.SetActive(true);
 
-        // 【追加】ゴールしたら入力をカットするためにコンポーネントをOFFにする
+        // ゴールしたら入力をカットするためにコンポーネントをOFFにする
         if (carInputManager != null)
         {
             carInputManager.enabled = false;

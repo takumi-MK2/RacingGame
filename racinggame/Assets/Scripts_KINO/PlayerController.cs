@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
         if (lapSwitch == true)
         {
             LapCount++;
-            Debug.Log("Lap " + LapCount);
             lapSwitch = false;
 
             if (LapCount > GoalLap) OnGoal();
