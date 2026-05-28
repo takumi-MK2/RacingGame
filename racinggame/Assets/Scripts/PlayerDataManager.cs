@@ -31,15 +31,4 @@ public class PlayerDataManager : MonoBehaviour
         playerCount = pCnt;
     }
 
-    // 全員の投票が終わった後に呼ぶ抽選関数
-    public void DecideStage(string[] stageNames)
-    {
-        if (selectedStageIndices.Count == 0) return;
-
-        int luckyPlayer = Random.Range(0, selectedStageIndices.Count);
-        int chosenStageIndex = selectedStageIndices[luckyPlayer];
-        finalStageName = stageNames[chosenStageIndex];
-
-        Debug.Log($"抽選の結果: {finalStageName}");
-    }
 }
