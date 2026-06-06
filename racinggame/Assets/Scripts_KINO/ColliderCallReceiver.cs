@@ -7,87 +7,86 @@ using UnityEngine.Events;
 /// コライダーコールバックの受信ユーティリティクラス.
 public class ColliderCallReceiver : MonoBehaviour
 {
-    // コライダーイベント定義クラス.
+
+    // コライダーイベント定義クラス
     public class CollisionEvent : UnityEvent<Collision> { }
-    // コライダーエンターイベント.
+
+    // コライダーエンターイベント
     public CollisionEvent CollisionEnterEvent = new CollisionEvent();
-    // コライダーステイイベント.
+    // コライダーステイイベント
     public CollisionEvent CollisionStayEvent = new CollisionEvent();
-    // コライダーイグジットイベント.
+    // コライダーイグジットイベント
     public CollisionEvent CollisionExitEvent = new CollisionEvent();
 
-    // トリガーイベント定義クラス.
+
+
+
+
+    // トリガーイベント定義クラス
     public class TriggerEvent : UnityEvent<Collider> { }
-    // トリガーエンターイベント.
+
+    // トリガーエンターイベント
     public TriggerEvent TriggerEnterEvent = new TriggerEvent();
-    // トリガーステイイベント.
+    // トリガーステイイベント
     public TriggerEvent TriggerStayEvent = new TriggerEvent();
-    // トリガーイグジットイベント.
+    // トリガーイグジットイベント
     public TriggerEvent TriggerExitEvent = new TriggerEvent();
+
+
 
     void Start()
     {
 
     }
 
-    /// コライダーエンターコールバック.
+
+
+    // コライダーエンターコールバック.
     void OnCollisionEnter(Collision col)
     {
         CollisionEnterEvent?.Invoke(col);
     }
 
-    // -------------------------------------------------------------------------
-    /// <summary>
-    /// コライダーステイコールバック.
-    /// </summary>
-    /// <param name="col"> 接触したコライダー. </param>
-    // -------------------------------------------------------------------------
+
+   
+    // コライダーステイコールバック.
     void OnCollisionStay(Collision col)
     {
         CollisionStayEvent?.Invoke(col);
     }
 
-    // -------------------------------------------------------------------------
-    /// <summary>
-    /// コライダーイグジットコールバック.
-    /// </summary>
-    /// <param name="col"> 接触したコライダー. </param>
-    // -------------------------------------------------------------------------
+
+    
+    // コライダーイグジットコールバック.
     void OnCollisionExit(Collision col)
     {
         CollisionExitEvent?.Invoke(col);
     }
 
-    // -------------------------------------------------------------------------
-    /// <summary>
-    /// トリガーエンターコールバック.
-    /// </summary>
-    /// <param name="other"> 接触したコライダー. </param>
-    // -------------------------------------------------------------------------
+   
+
+    // トリガーエンターコールバック.
     void OnTriggerEnter(Collider other)
     {
         TriggerEnterEvent?.Invoke(other);
     }
 
-    // -------------------------------------------------------------------------
-    /// <summary>
+
+
     /// トリガーステイコールバック.
-    /// </summary>
-    /// <param name="other"> 接触したコライダー. </param>
-    // -------------------------------------------------------------------------
     void OnTriggerStay(Collider other)
     {
         TriggerStayEvent?.Invoke(other);
     }
 
-    // -------------------------------------------------------------------------
-    /// <summary>
-    /// トリガーイグジットコールバック.
-    /// </summary>
-    /// <param name="other"> 接触したコライダー. </param>
-    // -------------------------------------------------------------------------
+
+   
+    // トリガーイグジットコールバック.
     void OnTriggerExit(Collider other)
     {
         TriggerExitEvent?.Invoke(other);
     }
+
+
+
 }

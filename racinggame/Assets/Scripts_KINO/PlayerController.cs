@@ -1,25 +1,33 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+
 public class PlayerController : MonoBehaviour
 {
+
     // ラップ数.
     public int LapCount = 0;
+
 
     // ゴール周回数.
     public int GoalLap = 2;
 
+
     // 逆走を判定するためのスイッチ.
     bool lapSwitch = false;
+
 
     // プレイステート.
     public GameController.PlayState CurrentState = GameController.PlayState.None;
 
+
     // ラップイベント.
     public UnityEvent LapEvent = new UnityEvent();
 
+
     // ゴール時イベント,
     public UnityEvent GoalEvent = new UnityEvent();
+
 
     // 前方ゲートコール.
     public void OnFrontGateCall()
@@ -93,9 +101,11 @@ public class PlayerController : MonoBehaviour
         
     }
 
+
     // Update
     void Update()
     {
         
     }
+
 }

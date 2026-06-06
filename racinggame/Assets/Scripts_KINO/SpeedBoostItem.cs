@@ -5,10 +5,10 @@ using AshVP; // 【重要】carControllerのネームスペースを合わせる
 public class SpeedBoostItem : MonoBehaviour
 {
     [Header("ブースト設定")]
-    [Tooltip("加速力（accelerationForce）にかける倍率（2倍なら通常時の2倍の加速に）")]
+    [Tooltip("加速力")]
     [SerializeField] private float boostMultiplier = 2.0f;
 
-    [Tooltip("ブーストが持続する時間（秒）")]
+    [Tooltip("ブースト時間")]
     [SerializeField] private float boostDuration = 3.0f;
 
     [Header("演出設定")]

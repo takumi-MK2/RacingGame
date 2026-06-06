@@ -6,10 +6,12 @@ using AshVP; //InputManagerのネームスペースを利用する
 
 public class GameController : MonoBehaviour
 {
-    // ラップテキスト.
+
+    // ラップテキスト
     [SerializeField] Text lapText = null;
 
-    // ゲームステート.
+
+    // ゲームステート
     public enum PlayState
     {
         None,
@@ -39,7 +41,7 @@ public class GameController : MonoBehaviour
     // プレイヤー.
     [SerializeField] PlayerController player = null;
 
-    // 【追加】車の入力マネージャーへの参照
+    // 車の入力マネージャーへの参照
     [SerializeField] private InputManager_AshVP carInputManager = null;
 
 
@@ -51,50 +53,52 @@ public class GameController : MonoBehaviour
         player.GoalEvent.AddListener(OnGoal);
 
         timerText.text = "Time : 000.000 s";
-        lapText.text = "Lap : 1/" + player.GoalLap;
+        lapText.text = "1/" + player.GoalLap;
     }
 
 
     void Update()
     {
         timerText.text = "Time : 000.000 s";
-        // ステートがReadyのとき.
+
+        // ステートがReadyのとき
         if (CurrentState == PlayState.Ready)
         {
-            // 時間を引いていく.
+            // 時間を引いていく
             currentCountDown -= Time.deltaTime;
 
             int intNum = 0;
-            // カウントダウン中.
+
+            // カウントダウン中
             if (currentCountDown <= (float)countStartTime && currentCountDown > 0)
             {
-                // int(整数)に.
+                // int(整数)に
                 intNum = (int)Mathf.Ceil(currentCountDown);
                 countdownText.text = intNum.ToString();
             }
             else if (currentCountDown <= 0)
             {
-                // 開始.
+                // 開始
                 StartPlay();
                 intNum = 0;
                 countdownText.text = "START!!";
 
-                // Start表示を少しして消す.
+                // Start表示を少しして消す
                 StartCoroutine(WaitErase());
             }
         }
-        // ステートがPlayのとき.
+        // ステートがPlayのとき
         else if (CurrentState == PlayState.Play)
         {
             timer += Time.deltaTime;
             timerText.text = "Time : " + timer.ToString("000.000") + " s";
         }
-        /*else
+        else
         {
             timer = 0;
             timerText.text = "Time : 000.000 s";
         }
-        */
+        
     }
 
 
@@ -110,6 +114,7 @@ public class GameController : MonoBehaviour
     }
 
 
+
     // ゲームスタート.
     void StartPlay()
     {
@@ -121,12 +126,14 @@ public class GameController : MonoBehaviour
     }
 
 
+
     // 少し待ってからStart表示を消す.
     IEnumerator WaitErase()
     {
         yield return new WaitForSeconds(2f);
         countdownText.gameObject.SetActive(false);
     }
+
 
 
     /// 現在のステートの設定.
@@ -137,14 +144,16 @@ public class GameController : MonoBehaviour
     }
 
 
+
     // ラップ数変化時処理.
     void OnLap()
     {
         var current = player.LapCount;
         var goalLap = player.GoalLap;
 
-        lapText.text = "Lap : " + current + "/" + goalLap;
+        lapText.text = "" + current + "/" + goalLap;
     }
+
 
 
     /// ゴール時処理.
@@ -165,6 +174,9 @@ public class GameController : MonoBehaviour
             {
                 carInputManager.carController.ProvideInputs(0f, 0f, 0f);
             }
+
         }
+
     }
+
 }
