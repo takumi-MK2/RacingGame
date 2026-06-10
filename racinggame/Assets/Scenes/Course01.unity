@@ -4905,27 +4905,27 @@ PrefabInstance:
     - target: {fileID: 7683036164058830431, guid: e8d906bdda9926b48992fdf9304081ef,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7683036164058830431, guid: e8d906bdda9926b48992fdf9304081ef,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7683036164058830431, guid: e8d906bdda9926b48992fdf9304081ef,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7683036164058830431, guid: e8d906bdda9926b48992fdf9304081ef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30
+      value: -34.24
       objectReference: {fileID: 0}
     - target: {fileID: 7683036164058830431, guid: e8d906bdda9926b48992fdf9304081ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 2.13
       objectReference: {fileID: 0}
     - target: {fileID: 7683036164058830431, guid: e8d906bdda9926b48992fdf9304081ef,
         type: 3}
@@ -7279,8 +7279,8 @@ ConfigurableJoint:
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 10000
-    positionDamper: 60000
+    positionSpring: 12000
+    positionDamper: 12000
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_ZDrive:
@@ -7352,7 +7352,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 2000
   m_LinearDamping: 0.1
-  m_AngularDamping: 4
+  m_AngularDamping: 3
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -7442,19 +7442,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SuspensionDistance: 0.1
-  suspensionForce: 10000
-  suspensionDamper: 60000
+  suspensionForce: 12000
+  suspensionDamper: 12000
   groundCheck: {fileID: 4569709863018631640}
   fricAt: {fileID: 4569709863326170412}
   CenterOfMass: {fileID: 4569709862451217250}
-  accelerationForce: 2000
-  turnTorque: 1500
-  brakeForce: 2000
-  frictionForce: 500
+  accelerationForce: 3500
+  turnTorque: 3000
+  brakeForce: 2500
+  frictionForce: 300
   dragAmount: 5
-  TurnAngle: 30
+  TurnAngle: 50
   maxRayLength: 1.51
-  slerpTime: 0.1
+  slerpTime: 0.08
   grounded: 0
   TireMeshes:
   - {fileID: 4569709862953949736}
@@ -7720,7 +7720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf423a1010df3b42afa2ab6a4284646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -30
+  gravity: -40
 --- !u!114 &4569709862371423904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12815,8 +12815,8 @@ ConfigurableJoint:
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 10000
-    positionDamper: 60000
+    positionSpring: 12000
+    positionDamper: 12000
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_ZDrive:
@@ -13040,8 +13040,8 @@ ConfigurableJoint:
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 10000
-    positionDamper: 60000
+    positionSpring: 12000
+    positionDamper: 12000
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_ZDrive:
@@ -18185,8 +18185,8 @@ ConfigurableJoint:
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 10000
-    positionDamper: 60000
+    positionSpring: 12000
+    positionDamper: 12000
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_ZDrive:
