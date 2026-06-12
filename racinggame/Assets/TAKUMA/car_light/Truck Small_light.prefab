@@ -20778,7 +20778,7 @@ GameObject:
   - component: {fileID: 1496696871260475621}
   - component: {fileID: 3031828298845966322}
   m_Layer: 8
-  m_Name: Truck Small Drifty
+  m_Name: Truck Small_light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
