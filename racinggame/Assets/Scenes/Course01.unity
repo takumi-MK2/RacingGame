@@ -4897,10 +4897,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u30A2\u30A4\u30C6\u30E0"
       objectReference: {fileID: 0}
+    - target: {fileID: 2891240972768920189, guid: e8d906bdda9926b48992fdf9304081ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4441900787136688894, guid: e8d906bdda9926b48992fdf9304081ef,
         type: 3}
       propertyPath: boostMultiplier
-      value: 1.3
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 7683036164058830431, guid: e8d906bdda9926b48992fdf9304081ef,
         type: 3}
@@ -4920,7 +4925,7 @@ PrefabInstance:
     - target: {fileID: 7683036164058830431, guid: e8d906bdda9926b48992fdf9304081ef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34.24
+      value: -35.58
       objectReference: {fileID: 0}
     - target: {fileID: 7683036164058830431, guid: e8d906bdda9926b48992fdf9304081ef,
         type: 3}
@@ -6535,7 +6540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2048893276
 Transform:
   m_ObjectHideFlags: 0
@@ -7350,7 +7355,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4569709862371423873}
   serializedVersion: 5
-  m_Mass: 2000
+  m_Mass: 2700
   m_LinearDamping: 0.1
   m_AngularDamping: 3
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -7401,7 +7406,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 42, y: 2.3, z: 8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4569709862177549365}
@@ -7447,7 +7452,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4569709863018631640}
   fricAt: {fileID: 4569709863326170412}
   CenterOfMass: {fileID: 4569709862451217250}
-  accelerationForce: 3500
+  accelerationForce: 4000
   turnTorque: 3000
   brakeForce: 2500
   frictionForce: 300
@@ -7720,7 +7725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf423a1010df3b42afa2ab6a4284646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -40
+  gravity: -100
 --- !u!114 &4569709862371423904
 MonoBehaviour:
   m_ObjectHideFlags: 0
