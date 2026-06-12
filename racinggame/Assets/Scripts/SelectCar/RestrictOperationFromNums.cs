@@ -38,6 +38,7 @@ namespace ROFN
                 switch (pNum)
                 {
                     case 2:
+                    Debug.Log("2人わよ");
                         cursor3P.SetActive(false);
                         car3P.SetActive(false);
                         SD.carChoice3P = -999;
@@ -47,7 +48,8 @@ namespace ROFN
                         Debug.Log($"{SD.carChoice3P},{SD.carChoice4P}");
                         break;
                     case 3:
-                        cursor4P.SetActive(false);
+                    Debug.Log("3人わよ");
+                    cursor4P.SetActive(false);
                         car4P.SetActive(false);
                         SD.carChoice4P = -999;
                         Debug.Log($"{SD.carChoice4P}");
