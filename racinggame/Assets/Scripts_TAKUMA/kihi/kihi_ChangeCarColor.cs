@@ -332,14 +332,16 @@ namespace kihi_CCC
         public void CursorUp(GameObject kaso,int pn)
         {
             Debug.Log(vector);
-            kaso.transform.Translate(Vector3.up * 300 * vector);
+            if (pn % 2 != 0) kaso.transform.Translate(Vector3.up * 300 * vector);
+            else kaso.transform.Translate(Vector3.down * 300 * vector);
             choice--;
             ChangeObject();
         }
 
         public void CursorDown(GameObject kaso, int pn)
         {
-            kaso.transform.Translate(Vector3.down * 300 * vector);
+            if (pn % 2 != 0) kaso.transform.Translate(Vector3.down * 300 * vector);
+            else kaso.transform.Translate(Vector3.up * 300 * vector);
             choice++;
             ChangeObject();
         }

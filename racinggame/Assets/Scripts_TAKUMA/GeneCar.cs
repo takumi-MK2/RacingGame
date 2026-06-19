@@ -1,6 +1,5 @@
 using SD;
 using UnityEngine;
-using UnityEngine.ProBuilder.MeshOperations;
 
 public class GeneCar : MonoBehaviour
 {
@@ -186,5 +185,9 @@ public class GeneCar : MonoBehaviour
         }
     }
 
+    void kyoutuu()
+    {
+
+    }
 
 }
