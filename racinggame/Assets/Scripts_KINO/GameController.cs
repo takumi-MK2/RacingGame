@@ -81,7 +81,7 @@ public class GameController : MonoBehaviour
                 // 開始
                 StartPlay();
                 intNum = 0;
-                countdownText.text = "START!!";
+                countdownText.text = "START";
 
                 // Start表示を少しして消す
                 StartCoroutine(WaitErase());
@@ -118,7 +118,7 @@ public class GameController : MonoBehaviour
     // ゲームスタート.
     void StartPlay()
     {
-        Debug.Log("Start!!!");
+        Debug.Log("START");
         SetPlayState(PlayState.Play);
 
         // スタートしたら入力を受け付けるようにコンポーネントをONにする
@@ -160,7 +160,7 @@ public class GameController : MonoBehaviour
     void OnGoal()
     {
         CurrentState = PlayState.Finish;
-        countdownText.text = "GOAL!!!";
+        countdownText.text = "GOAL";
         countdownText.gameObject.SetActive(true);
 
         // ゴールしたら入力をカットするためにコンポーネントをOFFにする
@@ -168,8 +168,6 @@ public class GameController : MonoBehaviour
         {
             carInputManager.enabled = false;
 
-            // OFFにしただけだと「最後に押していたボタンの入力」が残り続ける可能性があるので、
-            // 安全のためにアクセルやブレーキの数値を最後に一度 0 で上書きして止めます
             if (carInputManager.carController != null)
             {
                 carInputManager.carController.ProvideInputs(0f, 0f, 0f);
