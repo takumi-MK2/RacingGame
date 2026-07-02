@@ -34,7 +34,7 @@ public class NewGeneCar : MonoBehaviour
                 /*if (SD.carChoice1P == 0) */cod1 = Instantiate(car1, grid1);
                 //else if (SD.carChoice1P == 1) cod1 = Instantiate(car2, grid1);
                 //else cod1 = Instantiate(car3, grid1);
-                gawa1 = cod1.transform.Find("Cylinder.018_Cylinder.007").GetComponent<Renderer>;
+                //gawa1 = cod1.transform.Find("Cylinder.018_Cylinder.007").GetComponent<Renderer>;
                 col1 = new Color32(0, 156, 255, 255);
                 lie1 = cod1.GetComponentsInChildren<Light>();
                 foreach (Light shori in lie1)
