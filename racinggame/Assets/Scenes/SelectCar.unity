@@ -987,7 +987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &74019333
 Transform:
   m_ObjectHideFlags: 0
@@ -7791,7 +7791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &189290344
 Transform:
   m_ObjectHideFlags: 0
@@ -8376,7 +8376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -93}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &189833419
@@ -8392,7 +8392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8402,7 +8402,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 62
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 162
@@ -30419,7 +30419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &311509260
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30459,7 +30459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 92e140e576068544db6838381ce7e3ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e4ea73795fe6b043808f476dd82ef26, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -39092,8 +39092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::kihi_CCC.kihi_ChangeCarColor
-  cube: {fileID: 9084256533455604936}
-  sphere: {fileID: 1026874853677753565}
+  cube: {fileID: 1026874853677753565}
+  sphere: {fileID: 9084256533455604936}
   plain: {fileID: 8465956196306860955}
   choice: 1
   SD: {fileID: 1275752452}
@@ -52093,7 +52093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &652223869
 Transform:
   m_ObjectHideFlags: 0
@@ -76283,7 +76283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -306.25}
+  m_AnchoredPosition: {x: 0, y: -399.25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &885747448
@@ -76299,7 +76299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -76309,7 +76309,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 62
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 162
@@ -82017,8 +82017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::kihi_CCC.kihi_ChangeCarColor
-  cube: {fileID: 1162300198}
-  sphere: {fileID: 1230564200}
+  cube: {fileID: 1230564200}
+  sphere: {fileID: 1162300198}
   plain: {fileID: 409647204}
   choice: 1
   SD: {fileID: 1275752452}
@@ -96188,7 +96188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1162300199
 Transform:
   m_ObjectHideFlags: 0
@@ -103591,7 +103591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1230564201
 Transform:
   m_ObjectHideFlags: 0
@@ -115535,8 +115535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::kihi_CCC.kihi_ChangeCarColor
-  cube: {fileID: 74019332}
-  sphere: {fileID: 1970122529}
+  cube: {fileID: 1970122529}
+  sphere: {fileID: 74019332}
   plain: {fileID: 1765600667}
   choice: 1
   SD: {fileID: 1275752452}
@@ -120877,7 +120877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1335191893
 RectTransform:
   m_ObjectHideFlags: 0
@@ -149973,7 +149973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1613622122
 RectTransform:
   m_ObjectHideFlags: 0
@@ -150013,7 +150013,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0e4ea73795fe6b043808f476dd82ef26, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 92e140e576068544db6838381ce7e3ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -190568,7 +190568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1970122530
 Transform:
   m_ObjectHideFlags: 0
@@ -201873,8 +201873,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::kihi_CCC.kihi_ChangeCarColor
-  cube: {fileID: 652223868}
-  sphere: {fileID: 189290343}
+  cube: {fileID: 189290343}
+  sphere: {fileID: 652223868}
   plain: {fileID: 1122213056}
   choice: 1
   SD: {fileID: 1275752452}
@@ -213025,7 +213025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 305}
+  m_AnchoredPosition: {x: 0, y: 212}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2116147472
@@ -213041,7 +213041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -213051,7 +213051,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 62
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 162
@@ -229756,7 +229756,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1029905327398960365
 Transform:
   m_ObjectHideFlags: 0
@@ -288332,7 +288332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9087303138972580507
 Transform:
   m_ObjectHideFlags: 0
