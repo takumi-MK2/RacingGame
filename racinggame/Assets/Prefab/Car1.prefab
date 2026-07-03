@@ -5783,13 +5783,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1665143500940183214}
   - component: {fileID: 8979559993932813282}
+  - component: {fileID: 8445888802563455418}
   - component: {fileID: 6109129776210125673}
   - component: {fileID: 7438530184169413452}
-  - component: {fileID: 8445888802563455418}
   - component: {fileID: 1263927030538096054}
   - component: {fileID: 6253883791533347558}
   m_Layer: 8
-  m_Name: Player1
+  m_Name: Car1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5836,195 +5836,6 @@ MonoBehaviour:
   GoalEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!65 &6109129776210125673
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4434652026982785758}
-  m_Material: {fileID: 13400000, guid: ecced3aacfe9ee449930c039f383b7e6, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.98, y: 1.91, z: 5.12}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7438530184169413452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4434652026982785758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 036a5c7f73b0b864c917c64de3deaa8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carController: {fileID: 8445888802563455418}
-  accelerateAction:
-    m_Name: Accelerate
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 8239eef9-1fb3-4f0f-85f7-9b6cf61f8a3d
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: Keyboard
-      m_Id: 09098edc-cb63-4a69-94b6-07bc889069f0
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Accelerate
-      m_Flags: 4
-    - m_Name: Positive
-      m_Id: d1691dbd-9e16-4aed-aa84-0fa2960fdd9e
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Accelerate
-      m_Flags: 8
-    - m_Name: Negative
-      m_Id: a05d44ea-e0c2-411b-9062-1abcf81e46c4
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Accelerate
-      m_Flags: 8
-    - m_Name: Gamepad
-      m_Id: 29e88924-9356-4169-96d5-6b80c359e432
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Accelerate
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: 22dda0a5-170c-401d-a98a-61def468929b
-      m_Path: <Gamepad>/leftTrigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Accelerate
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: 11b328ec-aac0-4eb2-a6d8-e4503aa6ea73
-      m_Path: <Gamepad>/rightTrigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Accelerate
-      m_Flags: 8
-    m_Flags: 0
-  steerAction:
-    m_Name: Steer
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 71b70a4b-037d-49da-a165-42afd174d5d8
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: Keyboard
-      m_Id: fbf0632c-264f-4c2d-a42d-4bccd7bd06a5
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Steer
-      m_Flags: 4
-    - m_Name: Positive
-      m_Id: 62214454-49f8-4ed6-bd93-8e8257f3a316
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Steer
-      m_Flags: 8
-    - m_Name: Negative
-      m_Id: 12700347-9f2f-4b53-a7b8-7be00aa91827
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Steer
-      m_Flags: 8
-    - m_Name: Gamepad
-      m_Id: 590ba483-b71b-41ff-9c45-16e7ed3622af
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Steer
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: 63cfc6a8-df04-48f6-960a-e2035f636552
-      m_Path: <Gamepad>/leftStick/left
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Steer
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: e6608316-7466-408d-96cd-70c3cbb19598
-      m_Path: <Gamepad>/leftStick/right
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Steer
-      m_Flags: 8
-    m_Flags: 0
-  brakeAction:
-    m_Name: Brake
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 1222319f-c9f2-4c14-aafb-e66c8c6b28c0
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: Keyboard
-      m_Id: 5c2f6452-1b0d-479d-9a6c-b5e4132210a6
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Brake
-      m_Flags: 4
-    - m_Name: Positive
-      m_Id: 02409d8b-d9a4-4e9c-a0d1-d808396e0494
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Brake
-      m_Flags: 8
-    - m_Name: Gamepad
-      m_Id: 71c0a784-f8ec-4898-94f8-95be03713caf
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Brake
-      m_Flags: 4
-    - m_Name: positive
-      m_Id: de4881ab-5078-40e8-abc3-1f39c6bf4130
-      m_Path: <Gamepad>/buttonSouth
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Brake
-      m_Flags: 8
-    m_Flags: 0
 --- !u!114 &8445888802563455418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6046,7 +5857,7 @@ MonoBehaviour:
   accelerationForce: 2000
   turnTorque: 1800
   brakeForce: 3000
-  frictionForce: 300
+  frictionForce: 1000
   dragAmount: 5
   TurnAngle: 50
   maxRayLength: 1.51
@@ -6304,6 +6115,195 @@ MonoBehaviour:
   SkidEnable: 15
   skidWidth: 0.1
   normalDir: {x: 0, y: 0, z: 0}
+--- !u!65 &6109129776210125673
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434652026982785758}
+  m_Material: {fileID: 13400000, guid: ecced3aacfe9ee449930c039f383b7e6, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.98, y: 1.91, z: 5.12}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7438530184169413452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434652026982785758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036a5c7f73b0b864c917c64de3deaa8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carController: {fileID: 8445888802563455418}
+  accelerateAction:
+    m_Name: Accelerate
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 8239eef9-1fb3-4f0f-85f7-9b6cf61f8a3d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: 09098edc-cb63-4a69-94b6-07bc889069f0
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Accelerate
+      m_Flags: 4
+    - m_Name: Positive
+      m_Id: d1691dbd-9e16-4aed-aa84-0fa2960fdd9e
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Accelerate
+      m_Flags: 8
+    - m_Name: Negative
+      m_Id: a05d44ea-e0c2-411b-9062-1abcf81e46c4
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Accelerate
+      m_Flags: 8
+    - m_Name: Gamepad
+      m_Id: 29e88924-9356-4169-96d5-6b80c359e432
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Accelerate
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 22dda0a5-170c-401d-a98a-61def468929b
+      m_Path: <Gamepad>/leftTrigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Accelerate
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 11b328ec-aac0-4eb2-a6d8-e4503aa6ea73
+      m_Path: <Gamepad>/rightTrigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Accelerate
+      m_Flags: 8
+    m_Flags: 0
+  steerAction:
+    m_Name: Steer
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 71b70a4b-037d-49da-a165-42afd174d5d8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: fbf0632c-264f-4c2d-a42d-4bccd7bd06a5
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Steer
+      m_Flags: 4
+    - m_Name: Positive
+      m_Id: 62214454-49f8-4ed6-bd93-8e8257f3a316
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Steer
+      m_Flags: 8
+    - m_Name: Negative
+      m_Id: 12700347-9f2f-4b53-a7b8-7be00aa91827
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Steer
+      m_Flags: 8
+    - m_Name: Gamepad
+      m_Id: 590ba483-b71b-41ff-9c45-16e7ed3622af
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Steer
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 63cfc6a8-df04-48f6-960a-e2035f636552
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Steer
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: e6608316-7466-408d-96cd-70c3cbb19598
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Steer
+      m_Flags: 8
+    m_Flags: 0
+  brakeAction:
+    m_Name: Brake
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 1222319f-c9f2-4c14-aafb-e66c8c6b28c0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: 5c2f6452-1b0d-479d-9a6c-b5e4132210a6
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Brake
+      m_Flags: 4
+    - m_Name: Positive
+      m_Id: 02409d8b-d9a4-4e9c-a0d1-d808396e0494
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Brake
+      m_Flags: 8
+    - m_Name: Gamepad
+      m_Id: 71c0a784-f8ec-4898-94f8-95be03713caf
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Brake
+      m_Flags: 4
+    - m_Name: positive
+      m_Id: de4881ab-5078-40e8-abc3-1f39c6bf4130
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Brake
+      m_Flags: 8
+    m_Flags: 0
 --- !u!114 &1263927030538096054
 MonoBehaviour:
   m_ObjectHideFlags: 0
