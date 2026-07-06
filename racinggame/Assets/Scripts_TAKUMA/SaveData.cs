@@ -18,10 +18,10 @@ namespace SD
 
         void Start()
         {
-            carChoice1P = 0;
-            carChoice2P = 0;
-            carChoice3P = 0;
-            carChoice4P = 0;
+            carChoice1P = 1;
+            carChoice2P = 1;
+            carChoice3P = 1;
+            carChoice4P = 1;
 
             //ROFN.DOIT();
 
