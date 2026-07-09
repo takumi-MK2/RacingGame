@@ -277,7 +277,7 @@ public class StageSelect_Arrows : MonoBehaviour
                 actualNextScene = "Course02"; // 💡 ステージ2が選ばれたときの実際のシーン名
                 break;
             case 2:
-                actualNextScene = "GameMain"; // 💡 ステージ3が選ばれたときの実際のシーン名
+                actualNextScene = "Course03"; // 💡 ステージ3が選ばれたときの実際のシーン名
                 break;
                 // ステージ4以上がある場合はここに case 3: ... と増やせます
         }
