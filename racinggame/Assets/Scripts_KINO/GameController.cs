@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using AshVP; //InputManagerのネームスペースを利用する
+using AshVP;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-
     // ラップテキスト
     [SerializeField] Text lapText = null;
-
 
     // ゲームステート
     public enum PlayState
@@ -20,30 +19,29 @@ public class GameController : MonoBehaviour
         Finish,
     }
 
-    // 現在のステート.
+    // 現在のステート
     public PlayState CurrentState = PlayState.None;
 
-    // カウントダウンスタートタイム.
+    // カウントダウンスタートタイム
     [SerializeField] int countStartTime = 5;
 
-    // カウントダウンテキスト.
+    // カウントダウンテキスト
     [SerializeField] Text countdownText = null;
 
-    // タイマーテキスト.
+    // タイマーテキスト
     [SerializeField] Text timerText = null;
 
-    // カウントダウンの現在値.
+    // カウントダウンの現在値
     float currentCountDown = 0;
 
-    // ゲーム経過時間現在値.
+    // ゲーム経過時間
     float timer = 0;
 
-    // プレイヤー.
+    // プレイヤー
     [SerializeField] PlayerController player = null;
 
-    // 車の入力マネージャーへの参照
+    // 車の入力マネージャー
     [SerializeField] private InputManager_AshVP carInputManager = null;
-
 
     void Start()
     {
@@ -56,34 +54,23 @@ public class GameController : MonoBehaviour
         lapText.text = "1/" + player.GoalLap;
     }
 
-
     void Update()
     {
-        timerText.text = "Time : 000.000 s";
-
         // ステートがReadyのとき
         if (CurrentState == PlayState.Ready)
         {
-            // 時間を引いていく
             currentCountDown -= Time.deltaTime;
 
-            int intNum = 0;
-
-            // カウントダウン中
-            if (currentCountDown <= (float)countStartTime && currentCountDown > 0)
+            if (currentCountDown > 0)
             {
-                // int(整数)に
-                intNum = (int)Mathf.Ceil(currentCountDown);
+                int intNum = Mathf.CeilToInt(currentCountDown);
                 countdownText.text = intNum.ToString();
             }
-            else if (currentCountDown <= 0)
+            else
             {
-                // 開始
                 StartPlay();
-                intNum = 0;
                 countdownText.text = "START";
 
-                // Start表示を少しして消す
                 StartCoroutine(WaitErase());
             }
         }
@@ -95,75 +82,66 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            timer = 0;
-            timerText.text = "Time : 000.000 s";
+            timerText.text = "Time : " + timer.ToString("000.000") + " s";
         }
-        
     }
 
-
-    // カウントダウンスタート.
+    // カウントダウン開始
     void CountDownStart()
     {
-        currentCountDown = (float)countStartTime;
+        currentCountDown = countStartTime;
         SetPlayState(PlayState.Ready);
         countdownText.gameObject.SetActive(true);
 
-        // カウントダウン中は入力を受け付けないようにコンポーネントをOFFにする
-        if (carInputManager != null) carInputManager.enabled = false;
+        if (carInputManager != null)
+            carInputManager.enabled = false;
     }
 
-
-
-    // ゲームスタート.
+    // ゲーム開始
     void StartPlay()
     {
         Debug.Log("START");
         SetPlayState(PlayState.Play);
 
-        // スタートしたら入力を受け付けるようにコンポーネントをONにする
-        if (carInputManager != null) carInputManager.enabled = true;
+        if (carInputManager != null)
+            carInputManager.enabled = true;
     }
 
-
-
-    // 少し待ってからStart表示を消す.
+    // START表示を消す
     IEnumerator WaitErase()
     {
         yield return new WaitForSeconds(2f);
         countdownText.gameObject.SetActive(false);
     }
 
+    // ゴール後3秒待ってシーン遷移
+    IEnumerator ChangeSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("SelectStage");
+    }
 
-
-    /// 現在のステートの設定.
+    // ステート設定
     void SetPlayState(PlayState state)
     {
         CurrentState = state;
         player.CurrentState = state;
     }
 
-
-
-    // ラップ数変化時処理.
+    // ラップ数更新
     void OnLap()
     {
-        var current = player.LapCount;
-        var goalLap = player.GoalLap;
-
-        lapText.text = "" + current + "/" + goalLap;
+        lapText.text = player.LapCount + "/" + player.GoalLap;
     }
 
-
-
-    /// ゴール時処理.
+    // ゴール時
     void OnGoal()
     {
-        CurrentState = PlayState.Finish;
+        SetPlayState(PlayState.Finish);
+
         countdownText.text = "GOAL";
         countdownText.gameObject.SetActive(true);
 
-        // ゴールしたら入力をカットするためにコンポーネントをOFFにする
         if (carInputManager != null)
         {
             carInputManager.enabled = false;
@@ -172,9 +150,9 @@ public class GameController : MonoBehaviour
             {
                 carInputManager.carController.ProvideInputs(0f, 0f, 0f);
             }
-
         }
 
+        // 3秒後にシーン遷移
+        StartCoroutine(ChangeSceneAfterDelay());
     }
-
 }
