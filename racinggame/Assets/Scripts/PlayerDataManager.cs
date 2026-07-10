@@ -22,7 +22,7 @@ public class PlayerDataManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 

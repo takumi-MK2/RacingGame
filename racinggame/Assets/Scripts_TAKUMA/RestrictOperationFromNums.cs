@@ -14,12 +14,14 @@ namespace ROFN
         public GameObject cursor3P, cursor4P,
                           car3P, car4P;
 
-
-        void Start()
+        void Awake()
         {
             SD = FindAnyObjectByType<SaveData>();
             PDM = FindAnyObjectByType<PlayerDataManager>();
+        }
 
+        void Start()
+        {
             pNum = PDM.playerCount;
             doit = false;
             Debug.Log("うごいてるわよ");
@@ -53,9 +55,11 @@ namespace ROFN
                         car4P.SetActive(false);
                         SD.carChoice4P = -999;
                         Debug.Log($"{SD.carChoice4P}");
-
                         break;
-                }
+                case 4:
+                    Debug.Log("4人わよ");
+                    break;
+            }
 
             //    doit = true;
             //}
