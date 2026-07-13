@@ -1,5 +1,4 @@
 using SD;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class NewGeneCar : MonoBehaviour
@@ -9,6 +8,14 @@ public class NewGeneCar : MonoBehaviour
     public Transform grid1, grid2, grid3, grid4, grid1_3, grid2_3, grid3_3;
 
     [SerializeField] SaveData SD;
+
+    [Header("プレイヤーマーク画像")]
+    public Sprite mark1P;
+    public Sprite mark2P;
+    public Sprite mark3P;
+    public Sprite mark4P;
+
+    [SerializeField] private float markerHeight = 2.5f;
 
     void Awake()
     {
@@ -286,7 +293,29 @@ public class NewGeneCar : MonoBehaviour
         }
     }
 
+    void AttachPlayerMarker(GameObject carObject, Sprite markerSprite)
+    {
+        // 画像が登録されていない、または車がない場合は何もしない（安全装置）
+        if (markerSprite == null || carObject == null) return;
 
+        // 1. マーク用の空のオブジェクトを作る
+        GameObject markerObj = new GameObject("PlayerMarkerObject");
+
+        // 2. それを車の子要素にする
+        markerObj.transform.SetParent(carObject.transform);
+
+        // 3. 車の少し上に配置、向きをカメラ方向へ初期化
+        markerObj.transform.localPosition = new Vector3(0, markerHeight, 0);
+        markerObj.transform.localRotation = Quaternion.identity;
+        markerObj.transform.localScale = Vector3.one;
+
+        // 4. 画像を表示するための Sprite Renderer を追加して画像をセット
+        SpriteRenderer sr = markerObj.AddComponent<SpriteRenderer>();
+        sr.sprite = markerSprite;
+
+        // 5. カメラの方向を向き、密集時に消えるスクリプトを追加（これだけ作っておいてください）
+        markerObj.AddComponent<PlayerMarkerController>();
+    }
 
 
 }
