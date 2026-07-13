@@ -43,6 +43,9 @@ public class GameController : MonoBehaviour
     // 車の入力マネージャー
     [SerializeField] private InputManager_AshVP carInputManager = null;
 
+    // ゴール後に表示するボタンの親オブジェクト
+    [SerializeField] private GameObject button;
+
     void Start()
     {
         CountDownStart();
@@ -52,6 +55,12 @@ public class GameController : MonoBehaviour
 
         timerText.text = "Time : 000.000 s";
         lapText.text = "1/" + player.GoalLap;
+
+        // 最初はボタンを非表示
+        if (button != null)
+        {
+            button.SetActive(false);
+        }
     }
 
     void Update()
@@ -114,13 +123,6 @@ public class GameController : MonoBehaviour
         countdownText.gameObject.SetActive(false);
     }
 
-    // ゴール後3秒待ってシーン遷移
-    IEnumerator ChangeSceneAfterDelay()
-    {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("SelectStage");
-    }
-
     // ステート設定
     void SetPlayState(PlayState state)
     {
@@ -142,6 +144,7 @@ public class GameController : MonoBehaviour
         countdownText.text = "GOAL";
         countdownText.gameObject.SetActive(true);
 
+        // 車を停止
         if (carInputManager != null)
         {
             carInputManager.enabled = false;
@@ -152,7 +155,10 @@ public class GameController : MonoBehaviour
             }
         }
 
-        // 3秒後にシーン遷移
-        StartCoroutine(ChangeSceneAfterDelay());
+        // ボタンを表示
+        if (button != null)
+        {
+            button.SetActive(true);
+        }
     }
 }
