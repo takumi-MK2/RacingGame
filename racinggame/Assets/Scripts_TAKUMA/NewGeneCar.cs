@@ -15,7 +15,10 @@ public class NewGeneCar : MonoBehaviour
     public Sprite mark3P;
     public Sprite mark4P;
 
+    [Header("マーカーの調整")]
     [SerializeField] private float markerHeight = 2.5f;
+    // 【変更点1】インスペクターで大きさを変えられる変数を追加（初期値は3倍）
+    [SerializeField] private float markerScale = 3.0f;
 
     void Awake()
     {
@@ -55,11 +58,6 @@ public class NewGeneCar : MonoBehaviour
                     gawa1 = cod1.transform.Find("body/mesh body/Truck Small/Truck small").GetComponent<Renderer>();
                 }
 
-                //if (SD.carChoice1P == 0) cod1 = Instantiate(car1, grid1);
-                //else if (SD.carChoice1P == 1) cod1 = Instantiate(car2, grid1);
-                //else cod1 = Instantiate(car3, grid1);
-                //gawa1 = cod1.transform.Find("body/mesh body/Jeep/Cylinder.018_Cylinder.007").GetComponent<Renderer>();
-
                 if (gawa1 == null) Debug.Log("gawa1ないけど");
 
                 gawa1.material = color1p;
@@ -70,10 +68,9 @@ public class NewGeneCar : MonoBehaviour
                     shori.color = col1;
                 }
 
-                //if (SD.carChoice2P == 0) cod2 = Instantiate(car1, grid2);
-                //else if (SD.carChoice2P == 1) cod2 = Instantiate(car2, grid2);
-                //else cod2 = Instantiate(car3, grid2);
-                //gawa2 = cod2.transform.Find("body/mesh body/Jeep/Cylinder.018_Cylinder.007").GetComponent<Renderer>();
+                AttachPlayerMarker(cod1, mark1P);
+                SetupCarRespawn(cod1);
+
                 if (SD.carChoice2P == 0)
                 {
                     cod2 = Instantiate(car1, grid2);
@@ -96,13 +93,13 @@ public class NewGeneCar : MonoBehaviour
                 {
                     shori.color = col2;
                 }
+
+                AttachPlayerMarker(cod2, mark2P);
+                SetupCarRespawn(cod2);
+
                 break;
 
             case 3:
-                //if (SD.carChoice1P == 0) cod1 = Instantiate(car1, grid1_3);
-                //else if (SD.carChoice1P == 1) cod1 = Instantiate(car2, grid1_3);
-                //else cod1 = Instantiate(car3, grid1_3);
-                //gawa1 = cod1.transform.Find("body/mesh body/Jeep/Cylinder.018_Cylinder.007").GetComponent<Renderer>();
                 if (SD.carChoice1P == 0)
                 {
                     cod1 = Instantiate(car1, grid1_3);
@@ -126,10 +123,9 @@ public class NewGeneCar : MonoBehaviour
                     shori.color = col1;
                 }
 
-                //if (SD.carChoice2P == 0) cod2 = Instantiate(car1, grid2_3);
-                //else if (SD.carChoice2P == 1) cod2 = Instantiate(car2, grid2_3);
-                //else cod2 = Instantiate(car3, grid2_3);
-                //gawa2 = cod2.transform.Find("body/mesh body/Jeep/Cylinder.018_Cylinder.007").GetComponent<Renderer>();
+                AttachPlayerMarker(cod1, mark1P);
+                SetupCarRespawn(cod1);
+
                 if (SD.carChoice2P == 0)
                 {
                     cod2 = Instantiate(car1, grid2_3);
@@ -153,10 +149,9 @@ public class NewGeneCar : MonoBehaviour
                     shori.color = col2;
                 }
 
-                //if (SD.carChoice3P == 0) cod3 = Instantiate(car1, grid3_3);
-                //else if (SD.carChoice3P == 1) cod3 = Instantiate(car2, grid3_3);
-                //else cod3 = Instantiate(car3, grid3_3);
-                //gawa3 = cod3.transform.Find("body/mesh body/Jeep/Cylinder.018_Cylinder.007").GetComponent<Renderer>();
+                AttachPlayerMarker(cod2, mark2P);
+                SetupCarRespawn(cod2);
+
                 if (SD.carChoice3P == 0)
                 {
                     cod3 = Instantiate(car1, grid3_3);
@@ -179,13 +174,13 @@ public class NewGeneCar : MonoBehaviour
                 {
                     shori.color = col3;
                 }
+
+                AttachPlayerMarker(cod3, mark3P);
+                SetupCarRespawn(cod3);
+
                 break;
 
             case 4:
-                //if (SD.carChoice1P == 0) cod1 = Instantiate(car1, grid1);
-                //else if (SD.carChoice1P == 1) cod1 = Instantiate(car2, grid1);
-                //else cod1 = Instantiate(car3, grid1);
-                //gawa1 = cod1.transform.Find("body/mesh body/Jeep/Cylinder.018_Cylinder.007").GetComponent<Renderer>();
                 if (SD.carChoice1P == 0)
                 {
                     cod1 = Instantiate(car1, grid1);
@@ -209,10 +204,9 @@ public class NewGeneCar : MonoBehaviour
                     shori.color = col1;
                 }
 
-                //if (SD.carChoice2P == 0) cod2 = Instantiate(car1, grid2);
-                //else if (SD.carChoice2P == 1) cod2 = Instantiate(car2, grid2);
-                //else cod2 = Instantiate(car3, grid2);
-                //gawa2 = cod2.transform.Find("body/mesh body/Jeep/Cylinder.018_Cylinder.007").GetComponent<Renderer>();
+                AttachPlayerMarker(cod1, mark1P);
+                SetupCarRespawn(cod1);
+
                 if (SD.carChoice2P == 0)
                 {
                     cod2 = Instantiate(car1, grid2);
@@ -236,10 +230,9 @@ public class NewGeneCar : MonoBehaviour
                     shori.color = col2;
                 }
 
-                //if (SD.carChoice3P == 0) cod3 = Instantiate(car1, grid3);
-                //else if (SD.carChoice3P == 1) cod3 = Instantiate(car2, grid3);
-                //else cod3 = Instantiate(car3, grid3);
-                //gawa3 = cod3.transform.Find("body/mesh body/Jeep/Cylinder.018_Cylinder.007").GetComponent<Renderer>();
+                AttachPlayerMarker(cod2, mark2P);
+                SetupCarRespawn(cod2);
+
                 if (SD.carChoice3P == 0)
                 {
                     cod3 = Instantiate(car1, grid3);
@@ -263,10 +256,9 @@ public class NewGeneCar : MonoBehaviour
                     shori.color = col3;
                 }
 
-                //if (SD.carChoice4P == 0) cod4 = Instantiate(car1, grid4);
-                //else if (SD.carChoice4P == 1) cod4 = Instantiate(car2, grid4);
-                //else cod4 = Instantiate(car3, grid4);
-                //gawa4 = cod4.transform.Find("body/mesh body/Jeep/Cylinder.018_Cylinder.007").GetComponent<Renderer>();
+                AttachPlayerMarker(cod3, mark3P);
+                SetupCarRespawn(cod3);
+
                 if (SD.carChoice4P == 0)
                 {
                     cod4 = Instantiate(car1, grid4);
@@ -289,33 +281,36 @@ public class NewGeneCar : MonoBehaviour
                 {
                     shori.color = col4;
                 }
+
+                AttachPlayerMarker(cod4, mark4P);
+                SetupCarRespawn(cod4);
+
                 break;
         }
     }
 
     void AttachPlayerMarker(GameObject carObject, Sprite markerSprite)
     {
-        // 画像が登録されていない、または車がない場合は何もしない（安全装置）
         if (markerSprite == null || carObject == null) return;
 
-        // 1. マーク用の空のオブジェクトを作る
         GameObject markerObj = new GameObject("PlayerMarkerObject");
-
-        // 2. それを車の子要素にする
         markerObj.transform.SetParent(carObject.transform);
 
-        // 3. 車の少し上に配置、向きをカメラ方向へ初期化
         markerObj.transform.localPosition = new Vector3(0, markerHeight, 0);
         markerObj.transform.localRotation = Quaternion.identity;
-        markerObj.transform.localScale = Vector3.one;
 
-        // 4. 画像を表示するための Sprite Renderer を追加して画像をセット
+        // 【変更点2】Vector3.one だった部分を、上で設定した markerScale に変更しました
+        markerObj.transform.localScale = new Vector3(markerScale, markerScale, markerScale);
+
         SpriteRenderer sr = markerObj.AddComponent<SpriteRenderer>();
         sr.sprite = markerSprite;
 
-        // 5. カメラの方向を向き、密集時に消えるスクリプトを追加（これだけ作っておいてください）
         markerObj.AddComponent<PlayerMarkerController>();
     }
 
-
+    void SetupCarRespawn(GameObject carObject)
+    {
+        if (carObject == null) return;
+        carObject.AddComponent<CarRespawnMemory>();
+    }
 }

@@ -52,17 +52,33 @@ public class StageSelect_Arrows : MonoBehaviour
         buttonSelectorsCount = new int[stageButtons.Length];
         string[] connectedControllers = Input.GetJoystickNames();
 
+        // 💡 実際にコントローラーが認識されている数（空の文字列を除外）
+        int controllerCount = 0;
+        foreach (var name in connectedControllers)
+        {
+            if (!string.IsNullOrEmpty(name)) controllerCount++;
+        }
+
         for (int i = 0; i < players.Length; i++)
         {
             players[i].currentIndex = 0;
             players[i].inputReset = true;
             players[i].isReady = false;
 
-            if (i >= connectedControllers.Length)
+            // 💡 1P (i == 0) の場合は、コントローラーがなくてもマウス/キーボード用に必ず有効化する
+            if (i > 0 && i >= controllerCount)
             {
                 if (players[i].arrowTransform != null)
                 {
                     players[i].arrowTransform.gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                // 有効なプレイヤーの矢印は確実に表示する
+                if (players[i].arrowTransform != null)
+                {
+                    players[i].arrowTransform.gameObject.SetActive(true);
                 }
             }
         }
@@ -83,6 +99,9 @@ public class StageSelect_Arrows : MonoBehaviour
         switch (currentState)
         {
             case SelectState.Selecting:
+                // 💡 マウスによる1Pの選択処理を先に行う
+                HandleMouseInput();
+
                 // 通常の入力受付
                 for (int i = 0; i < players.Length; i++)
                 {
@@ -134,12 +153,41 @@ public class StageSelect_Arrows : MonoBehaviour
         for (int i = 0; i < players.Length; i++)
         {
             int btnIndex = players[i].currentIndex;
+            // 💡 配列の範囲外対策（念のためバグ防止）
+            btnIndex = Mathf.Clamp(btnIndex, 0, stageButtons.Length - 1);
+
             int totalSelectors = buttonSelectorsCount[btnIndex];
             int myOrder = currentButtonProcessCount[btnIndex];
 
             PositionArrowAnimate(players[i], i, btnIndex, myOrder, totalSelectors);
 
             currentButtonProcessCount[btnIndex]++;
+        }
+    }
+
+    // 💡 マウスでコースを変更・決定するための新規メソッド
+    void HandleMouseInput()
+    {
+        // 1Pがすでに決定(Ready)状態ならマウス操作を受け付けない
+        if (players.Length > 0 && players[0].isReady) return;
+
+        // マウスの左クリックを検知
+        if (Input.GetMouseButtonDown(0))
+        {
+            for (int i = 0; i < stageButtons.Length; i++)
+            {
+                // クリックされた位置が、ステージボタン（UI）の範囲内かどうかを判定
+                if (RectTransformUtility.RectangleContainsScreenPoint(stageButtons[i], Input.mousePosition))
+                {
+                    // 1Pのターゲットインデックスをクリックしたボタンの番号にする
+                    players[0].currentIndex = i;
+
+                    // クリックした瞬間にそのまま選択決定(Ready)にする
+                    players[0].isReady = true;
+                    Debug.Log($"マウス操作：プレイヤー 1 が ステージ {i + 1} を選択決定しました！");
+                    break;
+                }
+            }
         }
     }
 
@@ -156,6 +204,9 @@ public class StageSelect_Arrows : MonoBehaviour
             }
             return;
         }
+
+        // 💡 軸の名前やボタン名がインスペクターで未設定（空っぽ）の場合は処理をスキップ（エラー防止）
+        if (string.IsNullOrEmpty(p.horizontalAxis) || string.IsNullOrEmpty(p.submitButton)) return;
 
         float axis = Input.GetAxisRaw(p.horizontalAxis);
         if (axis == 0)
@@ -266,8 +317,7 @@ public class StageSelect_Arrows : MonoBehaviour
             }
         }
 
-        // ★【ここを追加：選ばれたステージ番号によって行くシーンを切り替える】
-        // finalChosenStageIndex は 0がステージ1、1がステージ2、2がステージ3… になっています。
+        // ★【選ばれたステージ番号によって行くシーンを切り替える】
         switch (finalChosenStageIndex)
         {
             case 0:
@@ -279,7 +329,6 @@ public class StageSelect_Arrows : MonoBehaviour
             case 2:
                 actualNextScene = "Course03"; // 💡 ステージ3が選ばれたときの実際のシーン名
                 break;
-                // ステージ4以上がある場合はここに case 3: ... と増やせます
         }
 
         Debug.Log($"次のシーンに移動します: {actualNextScene}");
@@ -287,7 +336,7 @@ public class StageSelect_Arrows : MonoBehaviour
         // 決定した実際のシーン名でロードする
         SceneManager.LoadScene(actualNextScene);
     }
-    // 💡 状態に合わせて矢印の動き（アニメーション）を細かく計算するメソッド
+
     // 💡 状態に合わせて矢印の動き（アニメーション）を細かく計算するメソッド
     void PositionArrowAnimate(PlayerCursor p, int playerIndex, int buttonIndex, int myOrder, int totalSelectors)
     {
@@ -303,8 +352,6 @@ public class StageSelect_Arrows : MonoBehaviour
         float currentYOffset = yOffset;
 
         // ★【ここが魔法の隠し味】
-        // 矢印のX座標を元に、時間のズレ（ディレイ）を作る
-        // 左にある（Xが小さい）ほど数字が小さくなり、右にあるほど大きくなる
         float waveDelay = arrowXPosition * 0.005f;
 
         // 【状態ごとの見た目の変化】
@@ -318,7 +365,6 @@ public class StageSelect_Arrows : MonoBehaviour
         else if (currentState == SelectState.DrumRoll)
         {
             // ★ドラムロールをウェーブ化！
-            // Time.time から waveDelay を引き算することで、左から右へ波が流れます
             currentYOffset += Mathf.Sin((Time.time - waveDelay) * 20f) * 25f;
         }
         else if (currentState == SelectState.ShowWinner)
@@ -326,7 +372,6 @@ public class StageSelect_Arrows : MonoBehaviour
             // ★当選発表もウェーブしながら大ジャンプ！
             if (winnersPlayerIndices.Contains(playerIndex))
             {
-                // 当選者は時間差（waveDelay）をもってピョンピョン跳ねる
                 currentYOffset += Mathf.Abs(Mathf.Sin((Time.time - waveDelay) * 12f)) * 50f;
             }
             else

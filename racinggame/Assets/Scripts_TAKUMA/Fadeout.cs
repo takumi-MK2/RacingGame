@@ -46,14 +46,6 @@ public class Fadeout : MonoBehaviour
             bgImg.DOFade(0, fadeTime);
             textTxt.DOFade(0, fadeTime);
             imgImg.DOFade(0, fadeTime);
-
-
-
         }
     }
-
-
-
-
-
 }
