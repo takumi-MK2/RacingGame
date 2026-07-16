@@ -39187,9 +39187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::kihi_CCC.kihi_ChangeCarColor
-  cube: {fileID: 1026874853677753565}
-  sphere: {fileID: 9084256533455604936}
-  plain: {fileID: 8465956196306860955}
+  trk: {fileID: 1026874853677753565}
+  std: {fileID: 9084256533455604936}
+  hvy: {fileID: 8465956196306860955}
   choice: 1
   SD: {fileID: 1275752452}
   nunumm: 1
@@ -82227,9 +82227,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::kihi_CCC.kihi_ChangeCarColor
-  cube: {fileID: 1230564200}
-  sphere: {fileID: 1162300198}
-  plain: {fileID: 409647204}
+  trk: {fileID: 1230564200}
+  std: {fileID: 1162300198}
+  hvy: {fileID: 409647204}
   choice: 1
   SD: {fileID: 1275752452}
   nunumm: 2
@@ -115795,9 +115795,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::kihi_CCC.kihi_ChangeCarColor
-  cube: {fileID: 1970122529}
-  sphere: {fileID: 74019332}
-  plain: {fileID: 1765600667}
+  trk: {fileID: 1970122529}
+  std: {fileID: 74019332}
+  hvy: {fileID: 1765600667}
   choice: 1
   SD: {fileID: 1275752452}
   nunumm: 3
@@ -202334,9 +202334,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f8a992e8f9c645a938a9132feddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::kihi_CCC.kihi_ChangeCarColor
-  cube: {fileID: 189290343}
-  sphere: {fileID: 652223868}
-  plain: {fileID: 1122213056}
+  trk: {fileID: 189290343}
+  std: {fileID: 652223868}
+  hvy: {fileID: 1122213056}
   choice: 1
   SD: {fileID: 1275752452}
   nunumm: 4

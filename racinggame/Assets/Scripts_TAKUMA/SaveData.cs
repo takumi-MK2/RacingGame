@@ -12,12 +12,17 @@ namespace SD
          public int playNum;
         */
         public Material color1P, color2P, color3P, color4P; //プレイヤーごとの色マテリアル
-        public int carChoice1P, carChoice2P, carChoice3P, carChoice4P; //選んだ車の種類
+        [Header("ここにプレイヤーごとの車種情報が入ります\n0:トリッキー 1:スタンダード 2:ヘビー")]
+        public int carChoice1P; //選んだ車の種類
+        public int carChoice2P;
+        public int carChoice3P;
+        public int carChoice4P; 
         //ChangeCarColor CCC;
         //RestrictOperationFromNums ROFN;
 
         void Start()
         {
+            //データの初期値設定(最初は全部スタンダード)
             carChoice1P = 1;
             carChoice2P = 1;
             carChoice3P = 1;
@@ -25,6 +30,7 @@ namespace SD
 
             //ROFN.DOIT();
 
+            //シーン跨いでも消えないようにするやつ
             DontDestroyOnLoad(this.gameObject);
         }
 
