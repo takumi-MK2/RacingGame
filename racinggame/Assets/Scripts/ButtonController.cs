@@ -43,14 +43,11 @@ public class ButtonController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 次のシーンへ進む（UIボタンのOnClickからも呼べる）
-    /// </summary>
     public void GoToNext()
     {
         if (!string.IsNullOrEmpty(nextSceneName))
         {
-            SceneManager.LoadScene(nextSceneName);
+            FadeManager.Instance.ChangeScene(nextSceneName);
         }
         else
         {
@@ -58,17 +55,11 @@ public class ButtonController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 前のシーンへ戻る
-    /// </summary>
     public void GoBack()
     {
-        SceneManager.LoadScene(backSceneName);
+        FadeManager.Instance.ChangeScene(backSceneName);
     }
 
-    /// <summary>
-    /// 何らかの入力（コントローラーボタン or キーボード）があったかチェック
-    /// </summary>
     private bool CheckAnyInput()
     {
         // コントローラーのボタンが押されたか
