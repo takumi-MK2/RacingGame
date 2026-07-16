@@ -33,14 +33,6 @@ public class ColliderCallReceiver : MonoBehaviour
     public TriggerEvent TriggerExitEvent = new TriggerEvent();
 
 
-
-    void Start()
-    {
-
-    }
-
-
-
     // コライダーエンターコールバック.
     void OnCollisionEnter(Collision col)
     {

@@ -92,19 +92,4 @@ public class PlayerController : MonoBehaviour
         GoalEvent?.Invoke();
     }
 
-
-
-    // Start
-    void Start()
-    {
-        
-    }
-
-
-    // Update
-    void Update()
-    {
-        
-    }
-
 }

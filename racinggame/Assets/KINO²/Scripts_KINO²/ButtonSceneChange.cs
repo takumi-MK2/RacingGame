@@ -10,18 +10,18 @@ public class ButtonSceneChange : MonoBehaviour
     void Start()
     {
         // ボタンが押されたときの処理を登録
-        Button_01.onClick.AddListener(GoToSelectStage);
-        Button_02.onClick.AddListener(GoToTitle);
+        Button_01.onClick.AddListener(StageSelect);
+        Button_02.onClick.AddListener(Title);
     }
 
-    // Button_01 → SelectStage
-    private void GoToSelectStage()
+    // Button_01 → ステージ選択
+    private void StageSelect()
     {
         SceneManager.LoadScene("SelectStage");
     }
 
-    // Button_02 → title
-    private void GoToTitle()
+    // Button_02 → タイトル
+    private void Title()
     {
         SceneManager.LoadScene("title");
     }
