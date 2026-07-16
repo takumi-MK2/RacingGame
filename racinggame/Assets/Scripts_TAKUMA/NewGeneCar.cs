@@ -3,10 +3,26 @@ using UnityEngine;
 
 public class NewGeneCar : MonoBehaviour
 {
-    public GameObject car1, car2, car3;
-    public Material color1p, color2p, color3p, color4p;
-    public Transform grid1, grid2, grid3, grid4, grid1_3, grid2_3, grid3_3;
+    [Header("Carのプレハブ(上から トリッキー、スタンダード、ヘビー)")]
+    public GameObject car1;
+    public GameObject car2;
+    public GameObject car3;
+    [Header("プレイヤーカラーのマテリアル")]
+    public Material color1p;
+    public Material color2p;
+    public Material color3p;
+    public Material color4p;
+    [Header("Carの初期位置設定(２人・４人プレイ用)")]
+    public Transform grid1;
+    public Transform grid2;
+    public Transform grid3;
+    public Transform grid4;
+    [Header("Carの初期位置設定(３人プレイ用)")]
+    public Transform grid1_3;
+    public Transform grid2_3;
+    public Transform grid3_3;
 
+    [Header("Carの選択情報とか(自動取得)")]
     [SerializeField] SaveData SD;
 
     [Header("プレイヤーマーク画像")]
@@ -22,16 +38,19 @@ public class NewGeneCar : MonoBehaviour
 
     void Awake()
     {
+        //シーン起動直後、すぐに車種選択情報を取得
         SD = FindAnyObjectByType<SaveData>();
     }
 
     void Start()
     {
+        //プレイ人数に応じて、Carの生成を行う
         if (SD.carChoice4P != -999) GenerateCar(4);
         else if (SD.carChoice3P != -999) GenerateCar(3);
         else GenerateCar(2);
     }
 
+    //車を生成するインスタンス//
     void GenerateCar(int num)
     {
         GameObject cod1, cod2, cod3, cod4;
@@ -42,6 +61,7 @@ public class NewGeneCar : MonoBehaviour
         switch (num)
         {
             case 2:
+                //選択した車種を生成後、色付けするためのレンダラーを取得
                 if (SD.carChoice1P == 0)
                 {
                     cod1 = Instantiate(car1, grid1);
@@ -60,7 +80,10 @@ public class NewGeneCar : MonoBehaviour
 
                 if (gawa1 == null) Debug.Log("gawa1ないけど");
 
+                //レンダラーにプレイヤーカラーをつける
                 gawa1.material = color1p;
+
+                //プレハブに仕込んであるライトにもプレイヤーカラーをつける
                 col1 = new Color32(0, 156, 255, 255);
                 lie1 = cod1.GetComponentsInChildren<Light>();
                 foreach (Light shori in lie1)

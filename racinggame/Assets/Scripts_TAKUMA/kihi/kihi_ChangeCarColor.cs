@@ -1,5 +1,4 @@
 using SD;
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -8,14 +7,19 @@ namespace kihi_CCC
 {
     public class kihi_ChangeCarColor : MonoBehaviour
     {
-        [Header("ヘッダーいれなきゃ")]
+        //[Header("ヘッダーいれなきゃ")]
         //public int playerNum; //プレイヤー番号
         //public GameObject cursor; //プレイヤーごとのカーソルをアタッチ
-        public GameObject cube, sphere, plain; //車のモデル(今は仮オブジェクト)
+        [Header("Carの見本を入れる")]
+        public GameObject trk; //車のモデル(今は仮オブジェクト)
+        public GameObject std;
+        public GameObject hvy;
         //public Material playerColor; //プレイヤーごとの色マテリアル
+        [Header("ここにプレイヤーごとの車種情報\n0:トリッキー 1:スタンダード 2:ヘビー")]
         public int choice; //車種番号
         int vector;
         //public GameObject Popup; //性能表示のパネル
+        [Header("Carの選択情報とか(自動取得)")]
         [SerializeField] SaveData SD; //他シーンに飛ばせる！保存データ
         /*bool singleShori; //無駄な処理を減らすためのbool*/
         /*public Renderer rnd;*/
@@ -185,19 +189,19 @@ namespace kihi_CCC
             {
                 //今はあらかじめ用意したオブジェクトを切り替えて表示している
                 case 0:
-                    cube.SetActive(true);
-                    sphere.SetActive(false);
-                    plain.SetActive(false);
+                    trk.SetActive(true);
+                    std.SetActive(false);
+                    hvy.SetActive(false);
                     break;
                 case 1:
-                    cube.SetActive(false);
-                    sphere.SetActive(true);
-                    plain.SetActive(false);
+                    trk.SetActive(false);
+                    std.SetActive(true);
+                    hvy.SetActive(false);
                     break;
                 case 2:
-                    cube.SetActive(false);
-                    sphere.SetActive(false);
-                    plain.SetActive(true);
+                    trk.SetActive(false);
+                    std.SetActive(false);
+                    hvy.SetActive(true);
                     break;
             }
 
