@@ -109,7 +109,6 @@ public class GameController : MonoBehaviour
     // ÉQÅ[ÉÄäJén
     void StartPlay()
     {
-        Debug.Log("START");
         SetPlayState(PlayState.Play);
 
         if (carInputManager != null)

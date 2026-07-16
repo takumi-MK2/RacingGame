@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class PlayerController04 : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 
     // ƒ‰ƒbƒv”.
@@ -46,7 +46,7 @@ public class PlayerController04 : MonoBehaviour
         {
             LapCount--;
             if (LapCount < 0) LapCount = 0;
-            Debug.Log("‹t‘–");
+            
 
             LapEvent?.Invoke();
 
@@ -88,7 +88,6 @@ public class PlayerController04 : MonoBehaviour
     public void OnGoal() // ƒS[ƒ‹ˆ—.
     {
         LapCount = 0;
-        Debug.Log("04_Goal");
         CurrentState = GameController.PlayState.Finish;
         GoalEvent?.Invoke();
     }
