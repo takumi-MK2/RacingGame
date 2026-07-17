@@ -33,7 +33,6 @@ public class GateController : MonoBehaviour
 
     
     // 後方トリガーエンターコール.
-    
     void OnBackTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
