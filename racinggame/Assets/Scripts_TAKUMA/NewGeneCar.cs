@@ -93,7 +93,7 @@ public class NewGeneCar : MonoBehaviour
                     shori.color = col1;
                 }
 
-                //cod1.AddComponent<PlayerController1P>();
+                cod1.AddComponent<PlayerController1P>();
                 //cod1.AddComponent<GameController1P>();
 
                 AttachPlayerMarker(cod1, mark1P);
@@ -121,6 +121,9 @@ public class NewGeneCar : MonoBehaviour
                 {
                     shori.color = col2;
                 }
+
+                //cod2.AddComponent<PlayerController2P>();
+                //cod2.AddComponent<GameController2P>();
 
                 AttachPlayerMarker(cod2, mark2P);
                 SetupCarRespawn(cod2);
@@ -151,6 +154,9 @@ public class NewGeneCar : MonoBehaviour
                     shori.color = col1;
                 }
 
+                cod1.AddComponent<PlayerController1P>();
+                //cod1.AddComponent<GameController1P>();
+
                 AttachPlayerMarker(cod1, mark1P);
                 SetupCarRespawn(cod1);
 
@@ -177,6 +183,9 @@ public class NewGeneCar : MonoBehaviour
                     shori.color = col2;
                 }
 
+                //cod2.AddComponent<PlayerController2P>();
+                //cod2.AddComponent<GameController2P>();
+
                 AttachPlayerMarker(cod2, mark2P);
                 SetupCarRespawn(cod2);
 
@@ -202,6 +211,9 @@ public class NewGeneCar : MonoBehaviour
                 {
                     shori.color = col3;
                 }
+
+                //cod3.AddComponent<PlayerController3P>();
+                //cod3.AddComponent<GameController3P>();
 
                 AttachPlayerMarker(cod3, mark3P);
                 SetupCarRespawn(cod3);
@@ -232,6 +244,9 @@ public class NewGeneCar : MonoBehaviour
                     shori.color = col1;
                 }
 
+                cod1.AddComponent<PlayerController1P>();
+                //cod1.AddComponent<GameController1P>();
+
                 AttachPlayerMarker(cod1, mark1P);
                 SetupCarRespawn(cod1);
 
@@ -257,6 +272,9 @@ public class NewGeneCar : MonoBehaviour
                 {
                     shori.color = col2;
                 }
+
+                //cod2.AddComponent<PlayerController2P>();
+                //cod2.AddComponent<GameController2P>();
 
                 AttachPlayerMarker(cod2, mark2P);
                 SetupCarRespawn(cod2);
@@ -284,6 +302,9 @@ public class NewGeneCar : MonoBehaviour
                     shori.color = col3;
                 }
 
+                //cod3.AddComponent<PlayerController3P>();
+                //cod3.AddComponent<GameController3P>();
+
                 AttachPlayerMarker(cod3, mark3P);
                 SetupCarRespawn(cod3);
 
@@ -309,6 +330,9 @@ public class NewGeneCar : MonoBehaviour
                 {
                     shori.color = col4;
                 }
+
+                //cod4.AddComponent<PlayerController4P>();
+                //cod4.AddComponent<GameController4P>();
 
                 AttachPlayerMarker(cod4, mark4P);
                 SetupCarRespawn(cod4);

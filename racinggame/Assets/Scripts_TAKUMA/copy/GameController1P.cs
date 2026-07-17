@@ -1,4 +1,5 @@
 using AshVP;
+using SD;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,6 +45,13 @@ public class GameController1P : MonoBehaviour
     // ゴール後に表示するボタンの親オブジェクト
     [SerializeField] private GameObject button;
 
+    [SerializeField] SaveData SD;
+
+    void Awake()
+    {
+        SD = FindAnyObjectByType<SaveData>();
+    }
+
     void Start()
     {
         lapText = GameObject.Find("LapText1p").GetComponent<Text>();
@@ -51,14 +59,8 @@ public class GameController1P : MonoBehaviour
         timerText = GameObject.Find("TimerText1p").GetComponent<Text>();
         
         player1p = GameObject.Find("Car1(Clone)").GetComponent<PlayerController1P>();
-        if (player1p)
-        {
-            player1p = GameObject.Find("Car2(Clone)").GetComponent<PlayerController1P>();
-            if (player1p) player1p = GameObject.Find("Car3(Clone)").GetComponent<PlayerController1P>();
-        }
 
         carInputManager = GameObject.Find("Car1(Clone)").GetComponent<InputManager_AshVP>();
-
 
         //lapText = transform.parent.parent.Find("Canvas/Header").GetComponent<Text>();
         //countdownText = transform.Find("../../Canvas/CountdownText").GetComponent<Text>();
