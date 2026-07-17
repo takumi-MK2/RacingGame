@@ -40,14 +40,16 @@ public class NewGeneCar : MonoBehaviour
     {
         //シーン起動直後、すぐに車種選択情報を取得
         SD = FindAnyObjectByType<SaveData>();
-    }
 
-    void Start()
-    {
         //プレイ人数に応じて、Carの生成を行う
         if (SD.carChoice4P != -999) GenerateCar(4);
         else if (SD.carChoice3P != -999) GenerateCar(3);
         else GenerateCar(2);
+    }
+
+    void Start()
+    {
+
     }
 
     //車を生成するインスタンス//
@@ -90,6 +92,9 @@ public class NewGeneCar : MonoBehaviour
                 {
                     shori.color = col1;
                 }
+
+                //cod1.AddComponent<PlayerController1P>();
+                //cod1.AddComponent<GameController1P>();
 
                 AttachPlayerMarker(cod1, mark1P);
                 SetupCarRespawn(cod1);

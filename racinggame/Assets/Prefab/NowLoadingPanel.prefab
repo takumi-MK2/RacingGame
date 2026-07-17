@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3546128608974066235}
+  - component: {fileID: 399392055007170578}
+  - component: {fileID: 5461434054182319765}
   m_Layer: 5
   m_Name: NowLoadingPanel
   m_TagString: Untagged
@@ -28,7 +30,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1210671522924731773}
   - {fileID: 2652403933339349420}
   - {fileID: 6994216525114855398}
   - {fileID: 707938090053936741}
@@ -39,6 +40,41 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &399392055007170578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263533062702874702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e787d50fef380454c982741dde6dd8ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fadeout
+  dispTime: 3
+  fadeTime: 1
+  bg: {fileID: 3276652758524171769}
+  bgImg: {fileID: 7751950337913093645}
+  text: {fileID: 8737485791114180692}
+  textTxt: {fileID: 5233710847041358532}
+  img: {fileID: 5421582625447287766}
+  imgImg: {fileID: 7640742386500754589}
+  timer: 0
+--- !u!114 &5461434054182319765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263533062702874702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffae43246b6e11149b7d83dfbd444894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::tire_kaiten
+  tire: {fileID: 707938090053936741}
+  ver: 180
 --- !u!1 &3276652758524171769
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,78 +150,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &4636812889539221300
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1210671522924731773}
-  - component: {fileID: 7343456759537914173}
-  - component: {fileID: 1070971729035417678}
-  m_Layer: 5
-  m_Name: NLManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1210671522924731773
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4636812889539221300}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3546128608974066235}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7343456759537914173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4636812889539221300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e787d50fef380454c982741dde6dd8ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fadeout
-  dispTime: 3
-  fadeTime: 1
-  bg: {fileID: 3276652758524171769}
-  bgImg: {fileID: 7751950337913093645}
-  text: {fileID: 8737485791114180692}
-  textTxt: {fileID: 5233710847041358532}
-  img: {fileID: 5421582625447287766}
-  imgImg: {fileID: 7640742386500754589}
-  timer: 0
---- !u!114 &1070971729035417678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4636812889539221300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffae43246b6e11149b7d83dfbd444894, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::tire_kaiten
-  tire: {fileID: 707938090053936741}
-  ver: 180
 --- !u!1 &5421582625447287766
 GameObject:
   m_ObjectHideFlags: 0
