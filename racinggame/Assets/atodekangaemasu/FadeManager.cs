@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -14,47 +14,72 @@ public class FadeManager : MonoBehaviour
             if (instance == null)
             {
                 instance = FindAnyObjectByType<FadeManager>();
-
                 if (instance == null)
                 {
-                    // ƒeƒXƒgƒvƒŒƒC—p‚ÉƒV[ƒ““à‚É–³‚¯‚ê‚Î©“®¶¬‚·‚é
-                    GameObject canvasObj = new GameObject("AutoFadeCanvas");
-                    Canvas canvas = canvasObj.AddComponent<Canvas>();
-                    canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-                    canvas.sortingOrder = 999;
-                    canvasObj.AddComponent<UnityEngine.UI.CanvasScaler>();
-                    canvasObj.AddComponent<UnityEngine.UI.GraphicRaycaster>();
-
-                    GameObject imageObj = new GameObject("FadeImage");
-                    imageObj.transform.SetParent(canvasObj.transform);
-                    Image img = imageObj.AddComponent<Image>();
-                    img.color = new Color(0, 0, 0, 0); // Å‰‚Í“§–¾
-
-                    RectTransform rect = img.GetComponent<RectTransform>();
-                    rect.anchorMin = Vector2.zero;
-                    rect.anchorMax = Vector2.one;
-                    rect.sizeDelta = Vector2.zero;
-
-                    instance = canvasObj.AddComponent<FadeManager>();
-                    instance.fadeImage = img;
-
-                    DontDestroyOnLoad(canvasObj);
+                    CreateFadeInstance();
                 }
             }
             return instance;
         }
     }
 
-    [Header("ƒtƒF[ƒh—p‚Ì‰æ‘œ")]
+    // ã‚²ãƒ¼ãƒ é–‹å§‹æ™‚ï¼ˆã©ã®ã‚·ãƒ¼ãƒ³ã‹ã‚‰å§‹ã‚ã¦ã‚‚ï¼‰è‡ªå‹•ã§ FadeManager ã‚’ç”Ÿæˆã™ã‚‹
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Initialize()
+    {
+        if (instance == null)
+        {
+            CreateFadeInstance();
+        }
+    }
+
+    private static void CreateFadeInstance()
+    {
+        GameObject managerObj = new GameObject("FadeManagerSystem");
+        instance = managerObj.AddComponent<FadeManager>();
+        instance.CreateFadeUI(managerObj);
+        DontDestroyOnLoad(managerObj);
+    }
+
+    [Header("ãƒ•ã‚§ãƒ¼ãƒ‰ç”¨ã®ç”»åƒ")]
     [SerializeField] private Image fadeImage;
 
-    [Header("ƒtƒF[ƒh‚É‚©‚©‚éŠÔi•bj")]
+    [Header("ãƒ•ã‚§ãƒ¼ãƒ‰ã«ã‹ã‹ã‚‹æ™‚é–“ï¼ˆç§’ï¼‰")]
     [SerializeField] private float fadeDuration = 0.5f;
 
-    // Œ»İƒtƒF[ƒh’†‚©‚Ç‚¤‚©‚ğ”»’è‚·‚éƒtƒ‰ƒO
     private bool isFading = false;
 
-    void Awake()
+    // å…¨ç”»é¢UIã‚’æ­£ã—ãç”Ÿæˆã™ã‚‹å‡¦ç†
+    private void CreateFadeUI(GameObject parent)
+    {
+        Canvas canvas = parent.AddComponent<Canvas>();
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        canvas.sortingOrder = 32767; // UIã®ä¸€ç•ªæœ€å‰é¢ã«è¡¨ç¤º
+
+        // ğŸ’¡ ç”»é¢ã‚µã‚¤ã‚ºã«åˆã‚ã›ã¦å¯å¤‰ã§å…¨ç”»é¢ã«åºƒã’ã‚‹è¨­å®š
+        CanvasScaler scaler = parent.AddComponent<CanvasScaler>();
+        scaler.uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
+
+        parent.AddComponent<GraphicRaycaster>();
+
+        GameObject imageObj = new GameObject("FadeImage");
+        imageObj.transform.SetParent(parent.transform, false);
+
+        fadeImage = imageObj.AddComponent<Image>();
+        fadeImage.color = new Color(0, 0, 0, 0); // åˆæœŸçŠ¶æ…‹ã¯é€æ˜
+        fadeImage.raycastTarget = false; // ã‚¯ãƒªãƒƒã‚¯ã‚’é‚ªé­”ã—ãªã„ã‚ˆã†ã«ã™ã‚‹ï¼ˆå¿…è¦ã«å¿œã˜ã¦ï¼‰
+
+        // ğŸ’¡ ç”»é¢å…¨ä½“ã«å¼·åˆ¶ãƒ”ãƒƒã‚¿ãƒªå¼µã‚Šåˆã‚ã›ã‚‹ï¼ˆå…¨æ–¹å‘ã‚¢ãƒ³ã‚«ãƒ¼ä¼¸é•·ï¼‰
+        RectTransform rect = fadeImage.GetComponent<RectTransform>();
+        rect.anchorMin = Vector2.zero; // (0, 0) å·¦ä¸‹
+        rect.anchorMax = Vector2.one;  // (1, 1) å³ä¸Š
+        rect.pivot = new Vector2(0.5f, 0.5f);
+        rect.offsetMin = Vector2.zero; // ä½™ç™½0
+        rect.offsetMax = Vector2.zero; // ä½™ç™½0
+        rect.localScale = Vector3.one;  // ã‚¹ã‚±ãƒ¼ãƒ«ã‚’1ã«å¼·åˆ¶ãƒªã‚»ãƒƒãƒˆ
+    }
+
+    private void Awake()
     {
         if (instance == null)
         {
@@ -67,18 +92,16 @@ public class FadeManager : MonoBehaviour
         }
     }
 
-    // šd—vFƒV[ƒ“‚ª“Ç‚İ‚Ü‚ê‚½ƒCƒxƒ“ƒg‚ğ“o˜^‚µ‚Ü‚·
-    void OnEnable()
+    private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // ƒV[ƒ“‚ªV‚µ‚­Ø‚è‘Ö‚í‚Á‚½‚çA–ˆ‰ñ•K‚¸©“®‚ÅƒtƒF[ƒhƒCƒ“i–¾‚é‚­‚·‚éj
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         StartCoroutine(FadeInRoutine());
@@ -86,54 +109,54 @@ public class FadeManager : MonoBehaviour
 
     public void ChangeScene(string sceneName)
     {
-        // ‚·‚Å‚ÉƒtƒF[ƒh’†‚È‚ç‘½d‹N“®‚ğ–h‚®
         if (isFading) return;
         StartCoroutine(FadeOutAndLoadScene(sceneName));
     }
 
-    // ‰æ–Ê‚ğ‚¾‚ñ‚¾‚ñˆÃ‚­‚µ‚ÄƒV[ƒ“‚ğØ‚è‘Ö‚¦‚é
     private IEnumerator FadeOutAndLoadScene(string sceneName)
     {
         isFading = true;
         float timer = 0f;
-        Color color = fadeImage.color;
 
-        while (timer < fadeDuration)
+        if (fadeImage != null)
         {
-            timer += Time.deltaTime;
-            color.a = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+            Color color = fadeImage.color;
+            while (timer < fadeDuration)
+            {
+                timer += Time.deltaTime;
+                color.a = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+                fadeImage.color = color;
+                yield return null;
+            }
+            color.a = 1f;
             fadeImage.color = color;
-            yield return null;
         }
 
-        color.a = 1f;
-        fadeImage.color = color;
-
-        // ƒV[ƒ“Ø‚è‘Ö‚¦i‚±‚ÌŒãA©“®“I‚É OnSceneLoaded ‚ªŒÄ‚Î‚ê‚Ü‚·j
         SceneManager.LoadScene(sceneName);
     }
 
-    // ‰æ–Ê‚ğ‚¾‚ñ‚¾‚ñ–¾‚é‚­‚·‚é
     private IEnumerator FadeInRoutine()
     {
         isFading = true;
         float timer = 0f;
-        Color color = fadeImage.color;
 
-        // ^‚Á•‚©‚çƒXƒ^[ƒg
-        color.a = 1f;
-        fadeImage.color = color;
-
-        while (timer < fadeDuration)
+        if (fadeImage != null)
         {
-            timer += Time.deltaTime;
-            color.a = Mathf.Lerp(1f, 0f, timer / fadeDuration);
+            Color color = fadeImage.color;
+            color.a = 1f;
             fadeImage.color = color;
-            yield return null;
+
+            while (timer < fadeDuration)
+            {
+                timer += Time.deltaTime;
+                color.a = Mathf.Lerp(1f, 0f, timer / fadeDuration);
+                fadeImage.color = color;
+                yield return null;
+            }
+            color.a = 0f;
+            fadeImage.color = color;
         }
 
-        color.a = 0f;
-        fadeImage.color = color;
         isFading = false;
     }
 }
