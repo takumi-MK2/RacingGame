@@ -4,13 +4,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameController1P : MonoBehaviour
+public class GameController3P : MonoBehaviour
 {
     // ラップテキスト
     [SerializeField] Text lapText = null;
 
     // ゲームステート
-    public enum PlayState1p
+    public enum PlayState3p
     {
         None,
         Ready,
@@ -19,7 +19,7 @@ public class GameController1P : MonoBehaviour
     }
 
     // 現在のステート
-    public PlayState1p CurrentState = PlayState1p.None;
+    public PlayState3p CurrentState = PlayState3p.None;
 
     // カウントダウンスタートタイム
     [SerializeField] int countStartTime = 5;
@@ -37,7 +37,7 @@ public class GameController1P : MonoBehaviour
     float timer = 0;
 
     // プレイヤー
-    [SerializeField] PlayerController1P player1p = null;
+    [SerializeField] PlayerController3P player3p = null;
 
     // 車の入力マネージャー
     [SerializeField] private InputManager_AshVP carInputManager = null;
@@ -54,12 +54,12 @@ public class GameController1P : MonoBehaviour
 
     void Start()
     {
-        lapText = GameObject.Find("LapText1p").GetComponent<Text>();
+        lapText = GameObject.Find("LapText3p").GetComponent<Text>();
         countdownText = GameObject.Find("CountdownText").GetComponent<Text>();
-        timerText = GameObject.Find("TimerText1p").GetComponent<Text>();
+        timerText = GameObject.Find("TimerText3p").GetComponent<Text>();
         
-        player1p = GameObject.FindWithTag("Player1P").GetComponent<PlayerController1P>();
-        carInputManager = GameObject.FindWithTag("Player1P").GetComponent<InputManager_AshVP>();
+        player3p = GameObject.FindWithTag("Player3P").GetComponent<PlayerController3P>();
+        carInputManager = GameObject.FindWithTag("Player3P").GetComponent<InputManager_AshVP>();
 
         //lapText = transform.parent.parent.Find("Canvas/Header").GetComponent<Text>();
         //countdownText = transform.Find("../../Canvas/CountdownText").GetComponent<Text>();
@@ -69,11 +69,11 @@ public class GameController1P : MonoBehaviour
 
         CountDownStart();
 
-        player1p.LapEvent.AddListener(OnLap);
-        player1p.GoalEvent.AddListener(OnGoal);
+        player3p.LapEvent.AddListener(OnLap);
+        player3p.GoalEvent.AddListener(OnGoal);
 
         timerText.text = "Time:000.000s";
-        lapText.text = "1/" + player1p.GoalLap;
+        lapText.text = "1/" + player3p.GoalLap;
 
         // 最初はボタンを非表示
         if (button != null)
@@ -85,7 +85,7 @@ public class GameController1P : MonoBehaviour
     void Update()
     {
         // ステートがReadyのとき
-        if (CurrentState == PlayState1p.Ready)
+        if (CurrentState == PlayState3p.Ready)
         {
             currentCountDown -= Time.deltaTime;
 
@@ -103,7 +103,7 @@ public class GameController1P : MonoBehaviour
             }
         }
         // ステートがPlayのとき
-        else if (CurrentState == PlayState1p.Play)
+        else if (CurrentState == PlayState3p.Play)
         {
             timer += Time.deltaTime;
             timerText.text = "Time:" + timer.ToString("000.000") + "s";
@@ -118,7 +118,7 @@ public class GameController1P : MonoBehaviour
     void CountDownStart()
     {
         currentCountDown = countStartTime;
-        SetPlayState(PlayState1p.Ready);
+        SetPlayState(PlayState3p.Ready);
         countdownText.gameObject.SetActive(true);
 
         if (carInputManager != null)
@@ -128,7 +128,7 @@ public class GameController1P : MonoBehaviour
     // ゲーム開始
     void StartPlay()
     {
-        SetPlayState(PlayState1p.Play);
+        SetPlayState(PlayState3p.Play);
 
         if (carInputManager != null)
             carInputManager.enabled = true;
@@ -142,22 +142,22 @@ public class GameController1P : MonoBehaviour
     }
 
     // ステート設定
-    void SetPlayState(PlayState1p state)
+    void SetPlayState(PlayState3p state)
     {
         CurrentState = state;
-        player1p.CurrentState = state;
+        player3p.CurrentState = state;
     }
 
     // ラップ数更新
     void OnLap()
     {
-        lapText.text = player1p.LapCount + "/" + player1p.GoalLap;
+        lapText.text = player3p.LapCount + "/" + player3p.GoalLap;
     }
 
     // ゴール時
     void OnGoal()
     {
-        SetPlayState(PlayState1p.Finish);
+        SetPlayState(PlayState3p.Finish);
 
         countdownText.text = "GOAL";
         countdownText.gameObject.SetActive(true);
