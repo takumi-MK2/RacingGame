@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class PlayerController1P : MonoBehaviour
+public class PlayerController2P : MonoBehaviour
 {
 
     // ラップ数.
@@ -18,7 +18,7 @@ public class PlayerController1P : MonoBehaviour
 
 
     // プレイステート.
-    public GameController1P.PlayState1p CurrentState = GameController1P.PlayState1p.None;
+    public GameController2P.PlayState2p CurrentState = GameController2P.PlayState2p.None;
 
 
     // ラップイベント.
@@ -72,14 +72,14 @@ public class PlayerController1P : MonoBehaviour
     
     void MoveUpdate() //移動処理
     {
-        if (CurrentState != GameController1P.PlayState1p.Play) return;
+        if (CurrentState != GameController2P.PlayState2p.Play) return;
 　　　　　　　　　　　　　　　　
     }
 
     
     void RotationUpdate() // 回転処理.
     {
-        if (CurrentState != GameController1P.PlayState1p.Play) return;
+        if (CurrentState != GameController2P.PlayState2p.Play) return;
         
     }
 
@@ -87,7 +87,7 @@ public class PlayerController1P : MonoBehaviour
     public void OnGoal() // ゴール時処理.
     {
         LapCount = 0;
-        CurrentState = GameController1P.PlayState1p.Finish;
+        CurrentState = GameController2P.PlayState2p.Finish;
         GoalEvent?.Invoke();
     }
 

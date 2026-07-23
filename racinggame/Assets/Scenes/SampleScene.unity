@@ -823,6 +823,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NowLoadingPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 263533062702874702, guid: 0d8f560909414e743babefdfa6ef3ce2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3546128608974066235, guid: 0d8f560909414e743babefdfa6ef3ce2,
         type: 3}
       propertyPath: m_Pivot.x
