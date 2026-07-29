@@ -5833,7 +5833,7 @@ MonoBehaviour:
   fricAt: {fileID: 21799741435683820}
   CenterOfMass: {fileID: 6200811789416996672}
   accelerationForce: 2000
-  turnTorque: 1800
+  turnTorque: 2100
   brakeForce: 3000
   frictionForce: 1000
   dragAmount: 5

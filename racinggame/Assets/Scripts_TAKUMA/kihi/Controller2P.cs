@@ -12,7 +12,7 @@ public class Controller2P : MonoBehaviour
     int vector;
     public GameObject cursor; //プレイヤーごとのカーソルをアタッチ
     public Material playerColor; //プレイヤーごとの色マテリアル
-    public GameObject Popup; //性能表示のパネル
+    public GameObject popupTrk, popupStd, popupHvy; //性能表示のパネル
     bool singleShori; //無駄な処理を減らすためのbool
     bool notRen; //コントローラーの連続処理防止用bool
     public int choice; //車種番号
@@ -34,7 +34,9 @@ public class Controller2P : MonoBehaviour
             else if (pNum == 2 || pNum == 4) vector = -1;
         }
 
-        Popup.SetActive(false);
+        popupTrk.SetActive(false);
+        popupStd.SetActive(false);
+        popupHvy.SetActive(false);
     }
 
     void Update()
@@ -79,9 +81,25 @@ public class Controller2P : MonoBehaviour
         //性能表示キー
         if (Input.GetKey(KeyCode.V))
         {
-            Popup.SetActive(true);
+            switch (choice)
+            {
+                case 0:
+                    popupTrk.SetActive(true);
+                    break;
+                case 1:
+                    popupStd.SetActive(true);
+                    break;
+                case 2:
+                    popupHvy.SetActive(true);
+                    break;
+            }
         }
-        else Popup.SetActive(false);
+        else
+        {
+            popupTrk.SetActive(false);
+            popupStd.SetActive(false);
+            popupHvy.SetActive(false);
+        }
     }
 
 
@@ -113,9 +131,25 @@ public class Controller2P : MonoBehaviour
         }
         if (gamepad.buttonSouth.isPressed)
         {
-            Popup.SetActive(true);
+            switch (choice)
+            {
+                case 0:
+                    popupTrk.SetActive(true);
+                    break;
+                case 1:
+                    popupStd.SetActive(true);
+                    break;
+                case 2:
+                    popupHvy.SetActive(true);
+                    break;
+            }
         }
-        else Popup.SetActive(false);
+        else
+        {
+            popupTrk.SetActive(false);
+            popupStd.SetActive(false);
+            popupHvy.SetActive(false);
+        }
 
         if (notRen && Mathf.Abs(vertical) > 0.4f)
         {
