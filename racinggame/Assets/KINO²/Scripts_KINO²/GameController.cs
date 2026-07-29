@@ -140,8 +140,10 @@ public class GameController : MonoBehaviour
     {
         SetPlayState(PlayState.Finish);
 
+        
         countdownText.text = "GOAL";
         countdownText.gameObject.SetActive(true);
+        
 
         // ŽÔ‚ð’âŽ~
         if (carInputManager != null)
