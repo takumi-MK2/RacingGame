@@ -45,7 +45,7 @@ public class FadeManager : MonoBehaviour
     [SerializeField] private Image fadeImage;
 
     [Header("フェードにかかる時間（秒）")]
-    [SerializeField] private float fadeDuration = 0.5f;
+    [SerializeField] private float fadeDuration = 0.3f;
 
     private bool isFading = false;
 
