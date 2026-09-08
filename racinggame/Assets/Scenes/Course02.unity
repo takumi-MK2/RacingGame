@@ -20173,7 +20173,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4434652026982785758, guid: 819b8b57ebc011044a50f18e05fa1f83,
+        type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1817094895}
   m_SourcePrefab: {fileID: 100100000, guid: 819b8b57ebc011044a50f18e05fa1f83, type: 3}
 --- !u!1 &294913896
 GameObject:
@@ -90486,6 +90490,25 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1817094887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4434652026982785758, guid: 819b8b57ebc011044a50f18e05fa1f83,
+    type: 3}
+  m_PrefabInstance: {fileID: 291186837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1817094895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817094887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd98b4b1a5051d849a79ab88a5b5d269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::yakekuso
+  allowedGamepadIndex: 0
 --- !u!1 &1817178746
 GameObject:
   m_ObjectHideFlags: 0
