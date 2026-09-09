@@ -5782,11 +5782,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1665143500940183214}
+  - component: {fileID: 1215390169576372883}
   - component: {fileID: 8445888802563455418}
   - component: {fileID: 6109129776210125673}
+  - component: {fileID: 6325897309938509145}
   - component: {fileID: 7438530184169413452}
   - component: {fileID: 1263927030538096054}
   - component: {fileID: 6253883791533347558}
+  - component: {fileID: 8710049043582380414}
   m_Layer: 8
   m_Name: Car1_newtype
   m_TagString: Player
@@ -5814,7 +5817,7 @@ Transform:
   - {fileID: 455639730170480111}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8445888802563455418
+--- !u!114 &1215390169576372883
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5822,6 +5825,84 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4434652026982785758}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1d6e7e953a81041acf21f8c52b32fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AshVP.carController1P
+  SuspensionDistance: 0.2
+  suspensionForce: 30000
+  suspensionDamper: 200
+  groundCheck: {fileID: 4791675905851088697}
+  fricAt: {fileID: 21799741435683820}
+  CenterOfMass: {fileID: 6200811789416996672}
+  accelerationForce: 200
+  turnTorque: 100
+  brakeForce: 150
+  frictionForce: 70
+  dragAmount: 4
+  TurnAngle: 30
+  maxRayLength: 1.51
+  slerpTime: 0.2
+  grounded: 0
+  TireMeshes:
+  - {fileID: 4564789556948299873}
+  - {fileID: 8952578060409870005}
+  - {fileID: 8460427506828242570}
+  - {fileID: 9218990832217752331}
+  TurnTires:
+  - {fileID: 1643039282523033228}
+  - {fileID: 173344697674957041}
+  frictionCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  accelerationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  separateReverseCurve: 0
+  ReverseCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  turnCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  driftCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  engineCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  carVelocity: {x: 0, y: 0, z: 0}
+  engineSounds: []
+  airDrag: 0
+  SkidEnable: 20
+  skidWidth: 0.12
+  normalDir: {x: 0, y: 0, z: 0}
+--- !u!114 &8445888802563455418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434652026982785758}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ebc9ab3c7c5a0b46a1b4b56ad86ebcb, type: 3}
   m_Name: 
@@ -6114,7 +6195,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.98, y: 1.91, z: 5.12}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7438530184169413452
+--- !u!114 &6325897309938509145
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6122,6 +6203,94 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4434652026982785758}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79758b8926b27e42b5e08b70b156615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AshVP.InputManager1P_AshVP
+  carController: {fileID: 8445888802563455418}
+  accelerateAction:
+    m_Name: Accelerate
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 040b51e0-6d8b-4dd2-844f-0f83a3787dbc
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: d25777c7-6c53-491d-97f9-ba7a4d06ca7a
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Accelerate
+      m_Flags: 4
+    - m_Name: positive
+      m_Id: 57b52183-d9fb-4056-aaf5-c8c16e109810
+      m_Path: <Gamepad>/rightTrigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Accelerate
+      m_Flags: 8
+    - m_Name: negative
+      m_Id: f6217c49-b635-4dd3-b855-52da94a77855
+      m_Path: <Gamepad>/leftTrigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Accelerate
+      m_Flags: 8
+    m_Flags: 0
+  steerAction:
+    m_Name: Steer
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f805ee0a-236e-4617-8ff2-42e2c704b766
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: bb38a3ac-8dfa-441a-b97d-844bac5c760d
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Steer
+      m_Flags: 4
+    - m_Name: positive
+      m_Id: 88e287dc-1ef3-468f-b61e-0932f07ef955
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Steer
+      m_Flags: 8
+    - m_Name: negative
+      m_Id: 1dbfbde9-515e-45eb-bb5f-01ef4963dfd9
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Steer
+      m_Flags: 8
+    m_Flags: 0
+  brakeAction:
+    m_Name: Brake
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f672d7f3-64c6-4837-bb67-9f622a180e5e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+--- !u!114 &7438530184169413452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434652026982785758}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 036a5c7f73b0b864c917c64de3deaa8d, type: 3}
   m_Name: 
@@ -6322,6 +6491,36 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8710049043582380414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434652026982785758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: 0}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &4546869392393594812
 GameObject:
   m_ObjectHideFlags: 0
