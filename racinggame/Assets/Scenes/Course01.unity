@@ -1154,8 +1154,8 @@ Transform:
   m_GameObject: {fileID: 103436491}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 172.94987, y: 7.9024, z: 20.206144}
-  m_LocalScale: {x: 97.58682, y: 17.442404, z: 0.10000001}
+  m_LocalPosition: {x: 172.94987, y: 7.9024, z: 20.2252}
+  m_LocalScale: {x: 97.54779, y: 17.442404, z: 0.10000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1659624846}
@@ -2019,7 +2019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &225466570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4978,7 +4978,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 255c2d49216b78946832a06055d19247, type: 2}
+  - {fileID: 2100000, guid: b15ba2b61001794478bdc30e1abc5d3e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5053,8 +5053,8 @@ Transform:
   m_GameObject: {fileID: 730343809}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 95.2917, y: 7.9024, z: -28.38}
-  m_LocalScale: {x: 158.04984, y: 17.442404, z: 0.10000001}
+  m_LocalPosition: {x: 94.6642, y: 7.9024, z: -28.38}
+  m_LocalScale: {x: 156.80124, y: 17.442404, z: 0.10000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1659624846}
@@ -5910,8 +5910,8 @@ Transform:
   m_GameObject: {fileID: 808024891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 134.41, y: 7.9024, z: 49.468307}
-  m_LocalScale: {x: 38.76332, y: 17.442404, z: 2.8}
+  m_LocalPosition: {x: 134.41, y: 7.9024, z: 42.7547}
+  m_LocalScale: {x: 52.190937, y: 17.442404, z: 2.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1659624846}
@@ -11755,8 +11755,8 @@ Transform:
   m_GameObject: {fileID: 1526021392}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 94.5397, y: 7.7079, z: -10.9}
-  m_LocalScale: {x: 120.07991, y: 17.053413, z: 1.5}
+  m_LocalPosition: {x: 94.2601, y: 7.7079, z: -10.9}
+  m_LocalScale: {x: 120.63058, y: 17.053413, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1659624846}
@@ -14951,7 +14951,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 207864f221811994bbd47749492e7680, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
