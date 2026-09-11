@@ -1,0 +1,57 @@
+{
+    "version": 1,
+    "name": "New Actions",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "2866aa30-9d04-4bb5-b716-7a553f2df3f8",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "1c258c5d-5cdd-479e-b202-76d513ca6c2c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "7ea57572-220f-444b-b997-c9839f4570a1",
+                    "path": "1DAxis",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Positive",
+                    "id": "c91a29ac-b690-465c-814e-200f6dac1808",
+                    "path": "<Keyboard>/#(W)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Negative",
+                    "id": "2f814963-2ad5-454e-9834-2460f099ec83",
+                    "path": "<Keyboard>/#(S)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
