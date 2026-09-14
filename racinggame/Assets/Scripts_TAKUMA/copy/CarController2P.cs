@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace AshVP
 {
-    public class carController1P : MonoBehaviour
+    public class carController2P : MonoBehaviour
     {
         #region Variables
 
@@ -66,17 +66,17 @@ namespace AshVP
 
         private void Awake()
         {
-            var gamepad = Gamepad.all[0];
+            var gamepad = Gamepad.all[1];
 
-            if(gamepad== Gamepad.all[0]) InitializeCar();
+            if(gamepad== Gamepad.all[1]) InitializeCar();
         }
 
 
         private void FixedUpdate()
         {
-            var gamepad = Gamepad.all[0];
+            var gamepad = Gamepad.all[1];
 
-            if (gamepad == Gamepad.all[0])
+            if (gamepad == Gamepad.all[1])
             {
                 UpdateCarVelocity();
                 HandleInputs();
@@ -95,9 +95,9 @@ namespace AshVP
 
         private void Update()
         {
-            var gamepad = Gamepad.all[0];
+            var gamepad = Gamepad.all[1];
 
-            if (gamepad == Gamepad.all[0])
+            if (gamepad == Gamepad.all[1])
             {
                 UpdateTireVisuals();
                 UpdateAudio();
