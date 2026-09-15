@@ -22349,6 +22349,7 @@ GameObject:
   - component: {fileID: 3543131200675183512}
   - component: {fileID: 6638941636261261791}
   - component: {fileID: 3888860642382916410}
+  - component: {fileID: -3178791611360592956}
   m_Layer: 8
   m_Name: Jeep_light
   m_TagString: Untagged
@@ -22887,6 +22888,27 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &-3178791611360592956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084256534263006213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bcd46a140c3272449d3ce726455c281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  LapCount: 0
+  GoalLap: 1
+  CurrentState: 0
+  LapEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  GoalEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9092629152939681414
 GameObject:
   m_ObjectHideFlags: 0
