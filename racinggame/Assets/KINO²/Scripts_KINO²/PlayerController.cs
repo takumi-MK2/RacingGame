@@ -87,7 +87,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnGoal() // ƒS[ƒ‹ˆ—.
     {
-        LapCount = 0;
         CurrentState = GameController.PlayState.Finish;
         GoalEvent?.Invoke();
     }

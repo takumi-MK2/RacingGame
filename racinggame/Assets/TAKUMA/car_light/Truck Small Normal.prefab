@@ -21754,6 +21754,7 @@ GameObject:
   - component: {fileID: 156367152915109779}
   - component: {fileID: 4333985141498606451}
   - component: {fileID: 5374243201679119545}
+  - component: {fileID: -1991965772391933121}
   m_Layer: 8
   m_Name: Truck Small Normal
   m_TagString: Untagged
@@ -22280,6 +22281,27 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &-1991965772391933121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8465956195319348485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bcd46a140c3272449d3ce726455c281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  LapCount: 0
+  GoalLap: 1
+  CurrentState: 0
+  LapEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  GoalEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9093261869786852970
 GameObject:
   m_ObjectHideFlags: 0
