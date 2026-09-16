@@ -1,17 +1,18 @@
+using Mono.Cecil.Cil;
 using SD;
 using UnityEngine;
 
 public class NewGeneCar : MonoBehaviour
 {
-    [Header("Carのプレハブ(上から トリッキー、スタンダード、ヘビー)")]
-    public GameObject car1;
-    public GameObject car2;
-    public GameObject car3;
-    [Header("プレイヤーカラーのマテリアル")]
-    public Material color1p;
-    public Material color2p;
-    public Material color3p;
-    public Material color4p;
+    //[Header("Carのプレハブ(上から トリッキー、スタンダード、ヘビー)")]
+    //public GameObject car1;
+    //public GameObject car2;
+    //public GameObject car3;
+    //[Header("プレイヤーカラーのマテリアル")]
+    //public Material color1p;
+    //public Material color2p;
+    //public Material color3p;
+    //public Material color4p;
     [Header("Carの初期位置設定(２人・４人プレイ用)")]
     public Transform grid1;
     public Transform grid2;
@@ -36,6 +37,14 @@ public class NewGeneCar : MonoBehaviour
     // 【変更点1】インスペクターで大きさを変えられる変数を追加（初期値は3倍）
     [SerializeField] private float markerScale = 3.0f;
 
+    public GameObject car11, car12, car13,
+        car21, car22, car23,
+        car31, car32, car33,
+        car41, car42, car43,
+        car131, car132, car133,
+        car231, car232, car233,
+        car331, car332, car333;
+
     void Awake()
     {
         //シーン起動直後、すぐに車種選択情報を取得
@@ -53,6 +62,7 @@ public class NewGeneCar : MonoBehaviour
     }
 
     //車を生成するインスタンス//
+    /*
     void GenerateCar(int num)
     {
         GameObject cod1, cod2, cod3, cod4;
@@ -346,6 +356,244 @@ public class NewGeneCar : MonoBehaviour
                 AttachPlayerMarker(cod4, mark4P);
                 SetupCarRespawn(cod4);
 
+                break;
+        }
+    }
+    */
+
+    void GenerateCar(int num)
+    {
+        switch (num)
+        {
+            case 2:
+                if (SD.carChoice1P == 1)
+                {
+                    car11.SetActive(true);
+                    car11.tag = "Player1P";
+                    car11.AddComponent<PlayerController1P>();
+                    AttachPlayerMarker(car11, mark1P);
+                    SetupCarRespawn(car11);
+                }
+                else if (SD.carChoice1P == 0)
+                {
+                    car12.SetActive(true);
+                    car12.tag = "Player1P";
+                    car12.AddComponent<PlayerController1P>();
+                    AttachPlayerMarker(car12, mark1P);
+                    SetupCarRespawn(car12);
+                }
+                else
+                {
+                    car13.SetActive(true);
+                    car13.tag = "Player1P";
+                    car13.AddComponent<PlayerController1P>();
+                    AttachPlayerMarker(car13, mark1P);
+                    SetupCarRespawn(car13);
+                }
+
+                if (SD.carChoice2P == 1)
+                {
+                    car21.SetActive(true);
+                    car21.tag = "Player2P";
+                    car21.AddComponent<PlayerController2P>();
+                    AttachPlayerMarker(car21, mark2P);
+                    SetupCarRespawn(car21);
+                }
+                else if (SD.carChoice2P == 0)
+                {
+                    car22.SetActive(true);
+                    car22.tag = "Player2P";
+                    car22.AddComponent<PlayerController2P>();
+                    AttachPlayerMarker(car22, mark2P);
+                    SetupCarRespawn(car22);
+                }
+                else
+                {
+                    car23.SetActive(true);
+                    car23.tag = "Player2P";
+                    car23.AddComponent<PlayerController2P>();
+                    AttachPlayerMarker(car23, mark2P);
+                    SetupCarRespawn(car23);
+                }
+                break;
+
+            case 3:
+                if (SD.carChoice1P == 1)
+                {
+                    car131.SetActive(true);
+                    car131.tag = "Player1P";
+                    car131.AddComponent<PlayerController1P>();
+                    AttachPlayerMarker(car131, mark1P);
+                    SetupCarRespawn(car131);
+                }
+                else if (SD.carChoice1P == 0)
+                {
+                    car132.SetActive(true);
+                    car132.tag = "Player1P";
+                    car132.AddComponent<PlayerController1P>();
+                    AttachPlayerMarker(car132, mark1P);
+                    SetupCarRespawn(car132);
+                }
+                else
+                {
+                    car133.SetActive(true);
+                    car133.tag = "Player1P";
+                    car133.AddComponent<PlayerController1P>();
+                    AttachPlayerMarker(car133, mark1P);
+                    SetupCarRespawn(car133);
+                }
+
+                if (SD.carChoice2P == 1)
+                {
+                    car231.SetActive(true);
+                    car231.tag = "Player2P";
+                    car231.AddComponent<PlayerController2P>();
+                    AttachPlayerMarker(car231, mark2P);
+                    SetupCarRespawn(car231);
+                }
+                else if (SD.carChoice2P == 0)
+                {
+                    car232.SetActive(true);
+                    car232.tag = "Player2P";
+                    car232.AddComponent<PlayerController2P>();
+                    AttachPlayerMarker(car232, mark2P);
+                    SetupCarRespawn(car232);
+                }
+                else
+                {
+                    car233.SetActive(true);
+                    car233.tag = "Player2P";
+                    car233.AddComponent<PlayerController2P>();
+                    AttachPlayerMarker(car233, mark2P);
+                    SetupCarRespawn(car233);
+                }
+
+                if (SD.carChoice3P == 1)
+                {
+                    car331.SetActive(true);
+                    car331.tag = "Player3P";
+                    car331.AddComponent<PlayerController3P>();
+                    AttachPlayerMarker(car331, mark3P);
+                    SetupCarRespawn(car331);
+                }
+                else if (SD.carChoice3P == 0)
+                {
+                    car332.SetActive(true);
+                    car332.tag = "Player3P";
+                    car332.AddComponent<PlayerController3P>();
+                    AttachPlayerMarker(car332, mark3P);
+                    SetupCarRespawn(car332);
+                }
+                else
+                {
+                    car333.SetActive(true);
+                    car333.tag = "Player3P";
+                    car333.AddComponent<PlayerController3P>();
+                    AttachPlayerMarker(car333, mark3P);
+                    SetupCarRespawn(car333);
+                }
+                break;
+
+            case 4:
+                if (SD.carChoice1P == 1)
+                {
+                    car11.SetActive(true);
+                    car11.tag = "Player1P";
+                    car11.AddComponent<PlayerController1P>();
+                    AttachPlayerMarker(car11, mark1P);
+                    SetupCarRespawn(car11);
+                }
+                else if (SD.carChoice1P == 0)
+                {
+                    car12.SetActive(true);
+                    car12.tag = "Player1P";
+                    car12.AddComponent<PlayerController1P>();
+                    AttachPlayerMarker(car12, mark1P);
+                    SetupCarRespawn(car12);
+                }
+                else
+                {
+                    car13.SetActive(true);
+                    car13.tag = "Player1P";
+                    car13.AddComponent<PlayerController1P>();
+                    AttachPlayerMarker(car13, mark1P);
+                    SetupCarRespawn(car13);
+                }
+
+                if (SD.carChoice2P == 1)
+                {
+                    car21.SetActive(true);
+                    car21.tag = "Player2P";
+                    car21.AddComponent<PlayerController2P>();
+                    AttachPlayerMarker(car21, mark2P);
+                    SetupCarRespawn(car21);
+                }
+                else if (SD.carChoice2P == 0)
+                {
+                    car22.SetActive(true);
+                    car22.tag = "Player2P";
+                    car22.AddComponent<PlayerController2P>();
+                    AttachPlayerMarker(car22, mark2P);
+                    SetupCarRespawn(car22);
+                }
+                else
+                {
+                    car23.SetActive(true);
+                    car23.tag = "Player2P";
+                    car23.AddComponent<PlayerController2P>();
+                    AttachPlayerMarker(car23, mark2P);
+                    SetupCarRespawn(car23);
+                }
+
+                if (SD.carChoice3P == 1)
+                {
+                    car31.SetActive(true);
+                    car31.tag = "Player3P";
+                    car31.AddComponent<PlayerController3P>();
+                    AttachPlayerMarker(car31, mark3P);
+                    SetupCarRespawn(car31);
+                }
+                else if (SD.carChoice3P == 0)
+                {
+                    car32.SetActive(true);
+                    car32.tag = "Player3P";
+                    car32.AddComponent<PlayerController3P>();
+                    AttachPlayerMarker(car32, mark3P);
+                    SetupCarRespawn(car32);
+                }
+                else
+                {
+                    car33.SetActive(true);
+                    car33.tag = "Player3P";
+                    car33.AddComponent<PlayerController3P>();
+                    AttachPlayerMarker(car33, mark3P);
+                    SetupCarRespawn(car33);
+                }
+
+                if (SD.carChoice4P == 1)
+                {
+                    car41.SetActive(true);
+                    car41.tag = "Player4P";
+                    car41.AddComponent<PlayerController4P>();
+                    AttachPlayerMarker(car41, mark4P);
+                    SetupCarRespawn(car41);
+                }
+                else if (SD.carChoice4P == 0)
+                {
+                    car42.SetActive(true);
+                    car42.tag = "Player4P";
+                    car42.AddComponent<PlayerController4P>();
+                    AttachPlayerMarker(car42, mark4P);
+                    SetupCarRespawn(car42);
+                }
+                else
+                {
+                    car43.SetActive(true);
+                    car43.tag = "Player4P";
+                    car43.AddComponent<PlayerController4P>();
+                    AttachPlayerMarker(car43, mark4P);
+                    SetupCarRespawn(car43);
+                }
                 break;
         }
     }
